@@ -34,6 +34,6 @@ class ReviewLikes(models.Model):
     voter = models.ForeignKey(User, on_delete=models.CASCADE, related_name='voter_likes')
     LIKES = [
         (1, 'like'),
-        (-1, 'unlike'),
+        (-1, 'dislike'),
     ]
     likes = models.IntegerField(choices=LIKES, default=0)
