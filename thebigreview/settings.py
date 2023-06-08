@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-orlaghsween-thebigrevie-b1x9j4vc62f.ws-eu98.gitpod.io',
+    '8000-orlaghsween-thebigrevie-b1x9j4vc62f.ws-eu99.gitpod.io',
     'the-big-review.herokuapp.com',
     'localhost',
 ]
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'fontawesomefree',
     'cloudinary',
     'django_summernote',
     'moviereview',
