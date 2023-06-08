@@ -1,0 +1,48 @@
+/* logo and navbar */
+.navbar .navbar-brand {
+    font-family: 'Oswald', sans-serif;
+    font-size: 250%;
+    font-weight: 700;
+    color: #1AE6AF;
+}
+
+.nav-link {
+    color: #1AE6AF;
+}
+
+.nav-link:hover {
+    color: #FFFFFF;
+}
+
+.active {
+    color: #1AE6AF !important;
+}
+
+/* headings */
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+/* body  */
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+/* background */
+.bg {
+    background-color: #000000;
+}
+
+/* style footer and social media links */
+
+.social-links i {
+    color: #1AE6AF;
+    font-size: 200%;
+}
