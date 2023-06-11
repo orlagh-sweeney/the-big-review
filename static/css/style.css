@@ -8,6 +8,7 @@
 
 .nav-link {
     color: #1AE6AF;
+    font-size: 125%;
 }
 
 .nav-link:hover {
@@ -45,4 +46,12 @@ body {
 .social-links i {
     color: #1AE6AF;
     font-size: 200%;
+}
+
+.social-links i:hover {
+    color: #FFFFFF;
+}
+
+.footer-text {
+    color:#1AE6AF
 }

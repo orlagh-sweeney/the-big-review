@@ -37,18 +37,18 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="collapse navbar-collapse justify-content-lg-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
-              <li class="nav-item">
+              <li class="nav-item ms-lg-3">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item ms-lg-3">
                 <a class="nav-link" href="#">Logout</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item ms-lg-3">
                 <a class="nav-link" href="#">Register</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mx-lg-3">
                 <a class="nav-link" href="#">Login</a>
               </li>
             </ul>
@@ -63,26 +63,36 @@
     </main>
 
     <!-- Footer -->
-    <footer class="expand-lg bg">
+    <footer class="expand-lg bg py-3 my-4">
         <div class="container">
+
+            <!-- Social Media links -->
             <div class="row">
-                <div class="col-md-8 mx-auto">
-                  <ul class="social-links">
-                      <li class=list-inline-item>
+                <div class="col-12">
+                  <ul class="social-links d-flex justify-content-center p-0">
+                      <li class="list-inline-item">
                           <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook"></i></a>
                       </li>
-                      <li class=list-inline-item>
+                      <li class="list-inline-item ms-3">
                           <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram"></i></a>
                       </li>
-                      <li class=list-inline-item>
+                      <li class="list-inline-item ms-3">
                           <a href="https://www.twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-square-twitter"></i></a>
                       </li>
                   </ul>
                 </div>
-                <div class=col-md-4>
-                  <p>Copyright</p>
-                </div>
+              </div>
+
+            <!-- Copyright and TMDB API attribution-->
+            <div class="row">
+              <div class="col-lg-4">
+                  <p class="text-center text-lg-start footer-text">&copy; Copyright Orlagh Sweeney</p>
+              </div>
+              <div class="col-lg-8 text-right">
+                <p class="text-center text-lg-end footer-text">TMDB disclaimer</p>
+              </div>
             </div>
+
         </div>
     </footer>
 </body>
