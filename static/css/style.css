@@ -23,6 +23,7 @@
 h1 {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
+    color: #1AE6AF;
 }
 
 h2, h3, h4 {
@@ -54,4 +55,27 @@ body {
 
 .footer-text {
     color:#1AE6AF
+}
+
+/* style buttons */
+
+.btn {
+    color: #000000;
+}
+
+.btn-outline-success:hover {
+    background-color: #1AE6AF;
+    color: #000000;
+    border-color: #1AE6AF;
+}
+
+.btn-outline-success {
+    color: #1AE6AF;
+}
+
+/* style search bar */
+
+.no-outline:focus {
+    border: 0;
+    box-shadow: none;
 }
