@@ -38,3 +38,21 @@ class SearchResultsView(View):
         return render(request, 'search_results.html', {
             "data": data,
         })
+
+
+class MovieDetailView(View):
+    template_name = 'movie_detail.html'
+
+    def get(self, request, movie_id, *args, **kwargs):
+        data = None
+        url = f"https://api.themoviedb.org/3/movie/{movie_id}?&api_key={api_key}&language=en-US&page=1"
+        response = requests.get(url)
+        print(response)
+
+        if response.status_code == 200:
+            data = response.json
+            print(response.text)
+
+        return render(request, 'movie_detail.html', {
+            "data": data,
+        })

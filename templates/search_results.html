@@ -11,7 +11,7 @@
         <img src="https://image.tmdb.org/t/p/w200{{ m.poster_path }}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ m.title }}</h5>
-            <a href="#" class="btn btn-primary">View movie</a>
+            <a href="movie/{{ m.id }}/" class="btn btn-primary">View movie</a>
         </div>
     </div>
 {% endfor %}
