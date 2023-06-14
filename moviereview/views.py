@@ -22,7 +22,7 @@ class HomeView(TemplateView):
 
 class SearchResultsView(View):
     template_name = 'search_results.html'
-    paginate_by = 6
+    paginate_by = 9
     print('test 1')
 
     def get(self, request, *args, **kwargs):

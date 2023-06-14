@@ -6,14 +6,31 @@
     <h1>Search Results</h1>
 </div>
 
-{% for m in data.results %}
-    <div class="card" style="width: 18rem;">
-        <img src="https://image.tmdb.org/t/p/w200{{ m.poster_path }}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{ m.title }}</h5>
-            <a href="movie/{{ m.id }}/" class="btn btn-primary">View movie</a>
+<div class="container">
+    <div class="row">
+
+        <!-- movies cards -->
+        <div class="col-lg-12">
+            <div class="row">
+            {% for m in data.results %}
+                <div class="col-md-4">    
+                    <div class="card d-flex my-2 mx-2">
+                        <img src="https://image.tmdb.org/t/p/w200{{ m.poster_path }}" class="card-img-top" alt="...">
+                        <div class="card-body bg">
+                            <h5 class="card-title">{{ m.title }}</h5>
+                            <a href="movie/{{ m.id }}/" class="btn btn-outline-success text-center">View movie</a>
+                        </div>
+                    </div>
+                </div>
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+            {% endif %}
+            {% endfor %}
+            </div>
         </div>
     </div>
-{% endfor %}
+
+</div>
 
 {%endblock%}

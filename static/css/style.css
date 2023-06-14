@@ -79,3 +79,13 @@ body {
     border: 0;
     box-shadow: none;
 }
+
+/* stlye cards */
+
+.card {
+    border: none;
+}
+
+.card-title {
+    color: #1AE6AF !important;
+}
