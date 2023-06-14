@@ -29,12 +29,14 @@ h1 {
 h2, h3, h4 {
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
+    color: #FFFFFF;
 }
 
 /* body  */
 body {
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
+    color: #FFFFFF;
 }
 
 /* background */
