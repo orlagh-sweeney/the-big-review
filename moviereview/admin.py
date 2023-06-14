@@ -7,7 +7,7 @@ from django_summernote.admin import SummernoteModelAdmin
 class ReviewAdmin(SummernoteModelAdmin):
 
     list_filter = ('created_on', 'rating')
-    list_display = ('author', 'title', 'created_on', 'updated_on', 'rating', 'movie_id', 'review_likes')
+    list_display = ('author', 'title', 'created_on', 'updated_on', 'rating', 'movie_id')
     search_fields = ('title', 'body', 'email', 'author')
     summernote_fields = ('body')
 

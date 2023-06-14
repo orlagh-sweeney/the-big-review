@@ -10,7 +10,6 @@ class Review(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    review_likes = models.IntegerField(default=0)
     RATING = [
         (0, 'not rated'),
         (1, '1'),

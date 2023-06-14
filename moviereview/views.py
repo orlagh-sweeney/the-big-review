@@ -28,7 +28,8 @@ class SearchResultsView(View):
     def get(self, request, *args, **kwargs):
         data = None
         query = request.GET.get('q')
-        url = f"https://api.themoviedb.org/3/search/movie?query={query}&api_key={api_key}&include_adult=false&language=en-US&page=1"
+        page = request.GET.get('p')
+        url = f"https://api.themoviedb.org/3/search/movie?query={query}&api_key={api_key}&include_adult=false&language=en-US&page={page}"
         response = requests.get(url)
 
         if response.status_code == 200:
