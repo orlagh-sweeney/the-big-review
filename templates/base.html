@@ -28,7 +28,7 @@
 
     <title>Document</title>
 </head>
-<body>
+<body class="bg">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg">
@@ -58,6 +58,20 @@
           </div>
         </div>
     </nav>
+
+    <!-- alert messages -->
+    <div class="container bg">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          {% for message in messages %}
+          <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+            {{ message | safe }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
 
     <main class="bg">
     {% block content %}
@@ -98,5 +112,12 @@
 
         </div>
     </footer>
+    <script>
+      setTimeout(function () {
+          let messages = document.getElementById('msg');
+          let alert = new bootstrap.Alert(messages);
+          alert.close();
+      }, 2500);
+  </script>
 </body>
 </html>
