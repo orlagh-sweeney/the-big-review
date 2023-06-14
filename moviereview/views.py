@@ -26,6 +26,7 @@ class SearchResultsView(View):
     print('test 1')
 
     def get(self, request, *args, **kwargs):
+        data = None
         query = request.GET.get('q')
         url = f"https://api.themoviedb.org/3/search/movie?query={query}&api_key={api_key}&include_adult=false&language=en-US&page=1"
         response = requests.get(url)
