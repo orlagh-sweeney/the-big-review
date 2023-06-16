@@ -1,7 +1,7 @@
 import requests
 import os
 from django.http import JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpResponseRedirect
@@ -72,11 +72,32 @@ class MovieDetailView(View):
 
 
 class AddReviewView(View):
-    """ View to render movie review form """
+    """ View to add a review to a movie """
+
     def get(self, request, movie_id, *args, **kwargs):
         """ Get review form and render add_review page """
+
         reviewform = ReviewForm()
 
         return render(request, 'add_review.html', {
             "review_form": ReviewForm()
         })
+
+    def post(self, request, movie_id, *args, **kwargs):
+        """
+        Creates a new review for the movie, stores it
+        in the database and redirects the user back to
+        the relevant movie detail page
+        """
+
+        reviewform = ReviewForm(data=request.POST)  
+
+        if reviewform.is_valid():
+            reviewform.instance.author = request.user
+            review = reviewform.save(commit=False)
+            review.movie_id = 626735
+            review.save()
+        else:
+            revewform = ReviewForm()
+
+        return HttpResponseRedirect(reverse("moviedetail", args=[movie_id]))
