@@ -7,6 +7,7 @@ from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Review, ReviewLikes
 from .forms import ReviewForm
+from django.contrib import messages
 
 
 api_key = os.environ.get('MY_API_KEY')
@@ -97,7 +98,8 @@ class AddReviewView(View):
             review = reviewform.save(commit=False)
             review.movie_id = movie_id
             review.save()
+            messages.success(request, "Your review has been sucessfully added.")
         else:
-            revewform = ReviewForm()
+            reviewform = ReviewForm()
 
         return HttpResponseRedirect(reverse("moviedetail", args=[movie_id]))
