@@ -5,7 +5,6 @@ from django import forms
 class ReviewForm(forms.ModelForm):
     """ From to submit a movie review """
     rating_choices = [
-        (0, 'not rated'),
         (1, '1'),
         (2, '2'),
         (3, '3'),

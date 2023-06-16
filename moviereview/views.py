@@ -95,7 +95,7 @@ class AddReviewView(View):
         if reviewform.is_valid():
             reviewform.instance.author = request.user
             review = reviewform.save(commit=False)
-            review.movie_id = 626735
+            review.movie_id = movie_id
             review.save()
         else:
             revewform = ReviewForm()
