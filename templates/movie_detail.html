@@ -25,12 +25,45 @@
             <p>{{ data.overview }}</p>
         </div>
     </div>
+
     <div class="row">
-        <div class="col">
-            <a href="movie/{{ m.id }}/addreview" class="btn btn-outline-success text-center">Add a review</a>
+        <div class="col-md-6 offset-md-3 text-center review">
+            <a href="movie/{{ m.id }}/addreview" class="btn btn-outline-success text-center mb-3 w-100">Leave a review +</a>
             <input class="form-control me-2 no-outline" type="text" hidden aria-label="Search" name="p" value="1">
         </div>
     </div>
+    <div class="row review">
+        <div class="col-md-6 offset-md-3">
+            {% for r in reviews %}
+            <div class="card mb-3 bg">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <p>{{ r.author }} | {{ r.created_on|date:"F j, Y" }}</p>
+                        </div>
+                        <div class="col-4 text-end">
+                            <p>Rating: {{ r.rating }}</p>                            
+                        </div>                       
+                    </div>
+                    <h5 class="card-title">{{ r.title }}</h5>
+                    <p class="card-text">{{ r.body }}</p>
+                    <div class="row">
+                        <div class="col">
+                            <p>Votes: </p>
+                        </div>
+                        <div class="col">
+                            <p>Edit</p>                          
+                        </div>        
+                        <div class="col">
+                            <p>Delete</p>                          
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
 </div>
 
 {%endblock%}

@@ -82,7 +82,7 @@ body {
     box-shadow: none;
 }
 
-/* stlye cards */
+/* style search results cards */
 
 .card {
     border: none;
@@ -99,5 +99,26 @@ body {
 }
 
 .account-link:hover {
+    color: #FFFFFF;
+}
+
+/* style review cards */
+
+.review .btn-outline-success {
+    background-color: #1AE6AF;
+    color: #000000;
+}
+
+.review .btn-outline-success:hover {
+    background-color: #000000;
+    color: #1AE6AF;
+    border-color: #1AE6AF;
+}
+
+.review .card-body {
+    background-color: #111111;
+}
+
+.review p {
     color: #FFFFFF;
 }

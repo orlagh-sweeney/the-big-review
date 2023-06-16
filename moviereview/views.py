@@ -67,8 +67,12 @@ class MovieDetailView(View):
             data = response.json
             print(response.text)
 
+        movie_id = movie_id
+        reviews = Review.objects.filter(movie_id=f'{movie_id}')
+
         return render(request, 'movie_detail.html', {
             "data": data,
+            "reviews": reviews,
         })
 
 
