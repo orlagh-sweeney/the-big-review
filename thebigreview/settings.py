@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'fontawesomefree',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
     'moviereview',
 ]
 
@@ -62,6 +63,8 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_DIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
