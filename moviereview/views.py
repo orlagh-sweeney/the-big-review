@@ -17,15 +17,21 @@ headers = {
 
 
 class HomeView(TemplateView):
+    """ View to render the homepage """
     template_name = 'index.html'
 
 
 class SearchResultsView(View):
+    """ View to render movie search results """
     template_name = 'search_results.html'
     paginate_by = 9
     print('test 1')
 
     def get(self, request, *args, **kwargs):
+        """
+        Gets the users search query and
+        returns a list of movies from the TMDB API
+        """
         data = None
         query = request.GET.get('q')
         page = request.GET.get('p')
@@ -42,9 +48,14 @@ class SearchResultsView(View):
 
 
 class MovieDetailView(View):
+    """ View to render movie data and review data """
     template_name = 'movie_detail.html'
 
     def get(self, request, movie_id, *args, **kwargs):
+        """
+        Gets movie detail data from the TMDB API
+        and movie reviews from the database
+        """
         data = None
         url = f"https://api.themoviedb.org/3/movie/{movie_id}?&api_key={api_key}&language=en-US&page=1"
         response = requests.get(url)
