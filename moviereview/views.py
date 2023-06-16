@@ -6,6 +6,7 @@ from django.views import generic, View
 from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Review, ReviewLikes
+from .forms import ReviewForm
 
 
 api_key = os.environ.get('MY_API_KEY')
@@ -67,4 +68,15 @@ class MovieDetailView(View):
 
         return render(request, 'movie_detail.html', {
             "data": data,
+        })
+
+
+class AddReviewView(View):
+    """ View to render movie review form """
+    def get(self, request, movie_id, *args, **kwargs):
+        """ Get review form and render add_review page """
+        reviewform = ReviewForm()
+
+        return render(request, 'add_review.html', {
+            "review_form": ReviewForm()
         })

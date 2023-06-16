@@ -25,6 +25,12 @@
             <p>{{ data.overview }}</p>
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <a href="movie/{{ m.id }}/addreview" class="btn btn-outline-success text-center">Add a review</a>
+            <input class="form-control me-2 no-outline" type="text" hidden aria-label="Search" name="p" value="1">
+        </div>
+    </div>
 </div>
 
 {%endblock%}
