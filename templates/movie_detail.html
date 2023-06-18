@@ -51,6 +51,7 @@
                         <div class="col">
                             <p>Votes: </p>
                         </div>
+                        {% if user.is_authenticated and user == r.author %}
                         <div class="col">
                             <a href="edit/{{ m.d }}/{{ r.id }}" aria-label="edit review">
                                 <i class="fa-solid fa-pen-to-square"></i>
@@ -58,7 +59,8 @@
                         </div>        
                         <div class="col">
                             <p>Delete</p>                          
-                        </div>                   
+                        </div>    
+                        {% endif %}          
                     </div>
                 </div>
             </div>
