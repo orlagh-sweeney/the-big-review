@@ -116,7 +116,8 @@ class EditReviewView(View):
         reviewform = ReviewForm(instance=review)
 
         return render(request, 'edit_review.html', {
-            "review_form": reviewform
+            "review_form": reviewform,
+            "review": review
             })
 
     def post(self, request, review_id, movie_id, *args, **kwargs):

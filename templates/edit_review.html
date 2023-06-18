@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            {% if user.is_authenticated and user == r.author %}
+            {% if user.is_authenticated and user == review.author %}
 
             <h2>Hi {{ user.username}}, edit your review: </h2>
             <form method="post">
