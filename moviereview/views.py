@@ -118,3 +118,18 @@ class EditReviewView(View):
         return render(request, 'edit_review.html', {
             "review_form": reviewform
             })
+
+    def post(self, request, review_id, movie_id, *args, **kwargs):
+        review = get_object_or_404(Review, id=review_id)
+        reviewform = ReviewForm(instance=review, data=request.POST)
+
+        if reviewform.is_valid():
+            reviewform.instance.author = request.user
+            review = reviewform.save(commit=False)
+            review.movie_id = movie_id
+            review.save()
+            messages.success(request, "Your review has been sucessfully updated.")
+        else:
+            reviewform = ReviewForm()
+
+        return HttpResponseRedirect(reverse("moviedetail", args=[movie_id]))
