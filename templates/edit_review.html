@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {% if user.is_authenticated %}
+
+            <h2>Hi {{ user.username}}, edit your review: </h2>
+            <form method="post">
+                {{ review_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-success">Update Review</button>
+            </form>
+            {% else %}
+
+            <h3>Sorry, you are not authorised to view this page.</h3>
+            <a class="btn btn-outline-success" href="{% url 'home' %}">Return to home</a>
+        
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{%endblock%}

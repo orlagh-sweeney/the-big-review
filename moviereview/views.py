@@ -86,7 +86,7 @@ class AddReviewView(View):
 
         return render(request, 'add_review.html', {
             "review_form": ReviewForm()
-        })
+            })
 
     def post(self, request, movie_id, *args, **kwargs):
         """
@@ -107,3 +107,14 @@ class AddReviewView(View):
             reviewform = ReviewForm()
 
         return HttpResponseRedirect(reverse("moviedetail", args=[movie_id]))
+
+
+class EditReviewView(View):
+
+    def get(self, request, review_id, *args, **kwargs):
+        review = get_object_or_404(Review, id=review_id)
+        reviewform = ReviewForm(instance=review)
+
+        return render(request, 'edit_review.html', {
+            "review_form": reviewform
+            })
