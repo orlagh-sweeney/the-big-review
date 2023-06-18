@@ -28,7 +28,7 @@
 
     <div class="row">
         <div class="col-md-6 offset-md-3 text-center review">
-            <a href="movie/{{ m.id }}/addreview" class="btn btn-outline-success text-center mb-3 w-100">Leave a review +</a>
+            <a href="addreview/{{ m.id }}" class="btn btn-outline-success text-center mb-3 w-100">Leave a review +</a>
             <input class="form-control me-2 no-outline" type="text" hidden aria-label="Search" name="p" value="1">
         </div>
     </div>
@@ -52,7 +52,7 @@
                             <p>Votes: </p>
                         </div>
                         <div class="col">
-                            <a href="/edit/{{ r.id }}" aria-label="edit review">
+                            <a href="edit/{{ m.d }}/{{ r.id }}" aria-label="edit review">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>                      
                         </div>        
