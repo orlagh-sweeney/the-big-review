@@ -122,3 +122,14 @@ body {
 .review p {
     color: #FFFFFF;
 }
+
+
+/* style edit and delete icons */
+
+.crud-icon > i {
+    color: #1AE6AF;
+}
+
+.crud-icon > i:hover {
+    color: #FFFFFF;
+}

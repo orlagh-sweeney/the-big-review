@@ -48,17 +48,19 @@
                     <h5 class="card-title">{{ r.title }}</h5>
                     <p class="card-text">{{ r.body }}</p>
                     <div class="row">
-                        <div class="col">
+                        <div class="col-10">
                             <p>Votes: </p>
                         </div>
                         {% if user.is_authenticated and user == r.author %}
-                        <div class="col">
-                            <a href="edit/{{ m.d }}/{{ r.id }}" aria-label="edit review">
+                        <div class="col-1 text-end">
+                            <a class="crud-icon" href="edit/{{ m.d }}/{{ r.id }}" aria-label="edit review">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>                      
                         </div>        
-                        <div class="col">
-                            <p>Delete</p>                          
+                        <div class="col-1 tetx-end">
+                            <a class="crud-icon" href="" aria-label="delete review">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </a>                         
                         </div>    
                         {% endif %}          
                     </div>
