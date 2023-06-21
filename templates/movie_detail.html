@@ -53,12 +53,12 @@
                         </div>
                         {% if user.is_authenticated and user == r.author %}
                         <div class="col-1 text-end">
-                            <a class="crud-icon" href="edit/{{ m.d }}/{{ r.id }}" aria-label="edit review">
+                            <a class="crud-icon" href="edit/{{ m.id }}/{{ r.id }}" aria-label="edit review">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>                      
                         </div>        
                         <div class="col-1 tetx-end">
-                            <a class="crud-icon" href="" aria-label="delete review">
+                            <a class="crud-icon" href="delete/{{ r.id }}" aria-label="delete review">
                                 <i class="fa-solid fa-trash-can"></i>
                             </a>                         
                         </div>    
@@ -69,7 +69,6 @@
             {% endfor %}
         </div>
     </div>
-
 </div>
 
 {%endblock%}

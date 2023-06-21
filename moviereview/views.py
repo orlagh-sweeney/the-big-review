@@ -134,3 +134,23 @@ class EditReviewView(View):
             reviewform = ReviewForm()
 
         return HttpResponseRedirect(reverse("moviedetail", args=[movie_id]))
+
+
+class DeleteReviewView(View):
+
+    def get(self, request, review_id, *args, **kwargs):
+        queryset = Review.objects.all()
+        review = get_object_or_404(queryset, id=review_id)
+
+        return render(request, 'delete_review.html', {
+            "review": review,
+            })
+
+    def post(self, request, review_id, movie_id, *args, **kwargs):
+        queryset = Review.objects.all()
+        review = get_object_or_404(queryset, id=review_id)
+        movie_id = review.movie_id
+        review.delete()
+        messages.success(request, "Your review has been deleted.")
+
+        return HttpResponseRedirect(reverse("moviedetail", args=[movie_id]))
