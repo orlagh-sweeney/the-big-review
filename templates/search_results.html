@@ -15,7 +15,11 @@
             {% for m in data.results %}
                 <div class="col-md-4">    
                     <div class="card d-flex my-2 mx-2">
+                        {% if m.poster_path == Null %}
+                        <img src="https://res.cloudinary.com/orlagh-dev/image/upload/f_auto,q_auto/hwafs3yu2qh5srydsb9r" class="card-img-top" alt="...">
+                        {% else %}
                         <img src="https://image.tmdb.org/t/p/w500{{ m.poster_path }}" class="card-img-top" alt="...">
+                        {% endif %}
                         <div class="card-body bg">
                             <h5 class="card-title">{{ m.title }}</h5>
                             <a href="movie/{{ m.id }}/" class="btn btn-outline-success text-center">View movie</a>
