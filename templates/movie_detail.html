@@ -60,8 +60,12 @@
                             </form>   
                             {% else %}
                             <span class="btn-like"><i class="fa-regular fa-heart"></i></span> 
-                            {% endif %}                     
-                            <span>Votes: </span>
+                            {% endif %}             
+                            {% for key, value in total_likes.items %}        
+                                {% if key == r.id %}
+                                <span class="review-like">{{ value }}</span>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                         {% if user.is_authenticated and user == r.author %}
                         <div class="col-1 text-end">

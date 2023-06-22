@@ -148,3 +148,9 @@ body {
     color: #1AE6AF;
     border: none;
 }
+
+/* style rewiew like count */
+
+.review-like {
+    color: #1AE6AF
+}

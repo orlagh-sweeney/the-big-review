@@ -8,7 +8,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Review, ReviewLikes
 from .forms import ReviewForm
 from django.contrib import messages
-from django.db.models import Avg
+from django.db.models import Avg, Count
 from django.db.models.functions import Round
 
 
@@ -74,10 +74,16 @@ class MovieDetailView(View):
         rating = Review.objects.filter(movie_id=f'{movie_id}').aggregate(Avg("rating"))
         rating = str(rating['rating__avg'])[0:3]
 
+        total_likes = ReviewLikes.objects.all().values('review').annotate(total=Count('id'))
+        dict_review_id_to_total_likes = {}
+        for t in total_likes:
+            dict_review_id_to_total_likes[t['review']] = t['total']
+
         return render(request, 'movie_detail.html', {
             "data": data,
             "reviews": reviews,
             "rating": rating,
+            "total_likes": dict_review_id_to_total_likes
         })
 
 
