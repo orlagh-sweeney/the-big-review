@@ -44,6 +44,13 @@ body {
     background-color: #000000;
 }
 
+/* style hero image */
+
+.hero-image {
+    height: 50vh;
+    background-color: #1AE6AF;
+}
+
 /* style footer and social media links */
 
 .social-links i {
