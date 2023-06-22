@@ -8,6 +8,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Review, ReviewLikes
 from .forms import ReviewForm
 from django.contrib import messages
+from django.db.models import Avg
+from django.db.models.functions import Round
 
 
 api_key = os.environ.get('MY_API_KEY')
@@ -69,10 +71,13 @@ class MovieDetailView(View):
 
         movie_id = movie_id
         reviews = Review.objects.filter(movie_id=f'{movie_id}')
+        rating = Review.objects.filter(movie_id=f'{movie_id}').aggregate(Avg("rating"))
+        rating = str(rating['rating__avg'])[0:3]
 
         return render(request, 'movie_detail.html', {
             "data": data,
             "reviews": reviews,
+            "rating": rating,
         })
 
 
