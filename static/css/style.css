@@ -133,3 +133,11 @@ body {
 .crud-icon > i:hover {
     color: #FFFFFF;
 }
+
+/* style like btn */
+
+.btn-like {
+    background: transparent;
+    color: #1AE6AF;
+    border: none;
+}

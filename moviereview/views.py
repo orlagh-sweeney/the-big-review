@@ -154,3 +154,25 @@ class DeleteReviewView(View):
         messages.success(request, "Your review has been deleted.")
 
         return HttpResponseRedirect(reverse("moviedetail", args=[movie_id]))
+
+
+class ReviewLike(View):
+
+    def post(self, request, review_id):
+
+        review = get_object_or_404(Review, id=review_id)
+        movie_id = review.movie_id
+        voter = request.user
+
+        total_likes = ReviewLikes.objects.filter(review=review).count()
+        print(total_likes)
+
+        try:
+            liked_review = ReviewLikes.objects.get(voter=voter, review=review)
+            liked_review.delete()
+            total_likes = total_likes - 1
+        except ReviewLikes.DoesNotExist:
+            ReviewLikes.objects.create(voter=voter, review=review, likes=1)
+            total_likes = total_likes + 1
+
+        return HttpResponseRedirect(reverse("moviedetail", args=[movie_id]))
