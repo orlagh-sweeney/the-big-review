@@ -9,7 +9,6 @@ from .models import Review, ReviewLikes
 from .forms import ReviewForm
 from django.contrib import messages
 from django.db.models import Avg, Count
-from django.db.models.functions import Round
 
 
 api_key = os.environ.get('MY_API_KEY')
@@ -60,6 +59,7 @@ class MovieDetailView(View):
         Gets movie detail data from the TMDB API
         and movie reviews from the database
         """
+        # API request for movie data
         data = None
         url = f"https://api.themoviedb.org/3/movie/{movie_id}?&api_key={api_key}&language=en-US&page=1"
         response = requests.get(url)
@@ -69,11 +69,15 @@ class MovieDetailView(View):
             data = response.json
             print(response.text)
 
+        # Get movie reviews from the database
         movie_id = movie_id
         reviews = Review.objects.filter(movie_id=f'{movie_id}')
+
+        # Calculate the average movie rating
         rating = Review.objects.filter(movie_id=f'{movie_id}').aggregate(Avg("rating"))
         rating = str(rating['rating__avg'])[0:3]
 
+        # Calculate total review likes
         total_likes = ReviewLikes.objects.all().values('review').annotate(total=Count('id'))
         dict_review_id_to_total_likes = {}
         for t in total_likes:
@@ -88,10 +92,10 @@ class MovieDetailView(View):
 
 
 class AddReviewView(View):
-    """ View to add a review to a movie """
+    """ View to add a new movie review """
 
     def get(self, request, movie_id, *args, **kwargs):
-        """ Get review form and render add_review page """
+        """ Get the review form and render add_review page """
 
         reviewform = ReviewForm()
 
@@ -101,8 +105,8 @@ class AddReviewView(View):
 
     def post(self, request, movie_id, *args, **kwargs):
         """
-        Creates a new review for the movie, stores it
-        in the database and redirects the user back to
+        Create a new review for the movie, store it
+        in the database and redirect the user back to
         the relevant movie detail page
         """
 
@@ -121,8 +125,14 @@ class AddReviewView(View):
 
 
 class EditReviewView(View):
-
+    """
+    View to edit reviews
+    """
     def get(self, request, review_id, *args, **kwargs):
+        """
+        Render edit_review page and get review form
+        populated with the data from the initial review
+        """
         review = get_object_or_404(Review, id=review_id)
         reviewform = ReviewForm(instance=review)
 
@@ -132,6 +142,10 @@ class EditReviewView(View):
             })
 
     def post(self, request, review_id, movie_id, *args, **kwargs):
+        """
+        Update the review in the database and redirect user
+        back to the movie detail page
+        """
         review = get_object_or_404(Review, id=review_id)
         reviewform = ReviewForm(instance=review, data=request.POST)
 
@@ -148,8 +162,12 @@ class EditReviewView(View):
 
 
 class DeleteReviewView(View):
+    """
+    View to delete a review from the database
+    """
 
     def get(self, request, review_id, *args, **kwargs):
+        """ render delete_review.html """
         queryset = Review.objects.all()
         review = get_object_or_404(queryset, id=review_id)
 
@@ -158,6 +176,9 @@ class DeleteReviewView(View):
             })
 
     def post(self, request, review_id, movie_id, *args, **kwargs):
+        """
+        delete the review and redirec the user back to the movie detail page
+        """ 
         queryset = Review.objects.all()
         review = get_object_or_404(queryset, id=review_id)
         movie_id = review.movie_id
@@ -168,8 +189,14 @@ class DeleteReviewView(View):
 
 
 class ReviewLike(View):
+    """
+    View to add and remove review likes from the database
+    """
 
     def post(self, request, review_id):
+        """
+        Add and delete review likes to/from the database
+        """
 
         review = get_object_or_404(Review, id=review_id)
         movie_id = review.movie_id
@@ -178,10 +205,14 @@ class ReviewLike(View):
         total_likes = ReviewLikes.objects.filter(review=review).count()
         print(total_likes)
 
+        # check if the user has already liked the review
+        # if they have, delete the review like object from the database
         try:
             liked_review = ReviewLikes.objects.get(voter=voter, review=review)
             liked_review.delete()
             total_likes = total_likes - 1
+        # if the user has not liked the review,
+        # add a new review like object to the database
         except ReviewLikes.DoesNotExist:
             ReviewLikes.objects.create(voter=voter, review=review, likes=1)
             total_likes = total_likes + 1
