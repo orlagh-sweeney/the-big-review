@@ -7,6 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
+            <!-- check that the user is authenticated in order to leave a review -->
             {% if user.is_authenticated %}
 
             <h2>Hi {{ user.username}}, leave a review: </h2>
@@ -17,6 +18,7 @@
             </form>
             {% else %}
 
+            <!-- If the user is not authenticated, redirect them to the login page -->
             <h3>You must be logged in to leave a review.</h3>
             <a class="btn btn-outline-success" href="{% url 'account_login' %}">Login</a>
         

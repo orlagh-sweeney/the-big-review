@@ -6,10 +6,12 @@
 
 {% block content %}
 
+<!-- Signup page with the signup form -->
 <div class="container">
     <div class="row align-items-center justify-content-center">
         <div class="col-md-8 mt-3 offset-md-5 px-5 ps-md-0">
             <h1>{% trans "Sign Up" %}</h1>
+            <!-- If the user already has an account they are redirected to the login page -->
             <p>{% blocktrans %}Already have an account? Then please <a class="account-link"
                     href="{{ login_url }}">login</a>.{% endblocktrans %}</p>
         </div>

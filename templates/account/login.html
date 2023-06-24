@@ -7,12 +7,14 @@
 
 {% block content %}
 
+<!-- Login page with the user login form -->
 <div class="container">
     <div class="row align-items-center justify-content-center">
         <div class="col-md-8 mt-3 offset-md-5 px-5 ps-md-0">
 
             <h1>{% trans "Sign In" %}</h1>
 
+            <!-- If the user doesn't have an account they are redirected to the signup page -->
             <p>{% blocktrans %}Don't have an account?
                 <a class="account-link" href="{{ signup_url }}">Register here</a>.{% endblocktrans %}</p>
         </div>
