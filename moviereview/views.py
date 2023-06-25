@@ -10,6 +10,8 @@ from .forms import ReviewForm
 from django.contrib import messages
 from django.db.models import Avg, Count
 
+import pandas as pd
+
 
 api_key = os.environ.get('MY_API_KEY')
 
@@ -83,11 +85,36 @@ class MovieDetailView(View):
         for t in total_likes:
             dict_review_id_to_total_likes[t['review']] = t['total']
 
+        # Parse data models to pandas df
+        df_likes = pd.DataFrame(list(ReviewLikes.objects.all().values()))
+        df_reviews = pd.DataFrame(list(Review.objects.all().values()))
+
+        # Map reviews to likes
+        df_reviews_and_likes = pd.merge(
+            df_reviews[['id']],
+            df_likes[['review_id', 'voter_id']],
+            left_on=['id'],
+            right_on=['review_id'],
+            how='left'
+        )
+
+        map_review_id_to_voter_id = {}
+        for review_id_iterator in df_reviews_and_likes['id'].unique():
+            # Filter rows in ReviewLikes for a given review
+            df_likes_review_id = df_reviews_and_likes[df_reviews_and_likes['review_id'] == review_id_iterator]
+
+            # Get list of voters that liked that review
+            voters_for_review_id = list(df_likes_review_id['voter_id'].unique())
+
+            # Update map with review_id (key) and list of voters (value)
+            map_review_id_to_voter_id[review_id_iterator] = voters_for_review_id
+
         return render(request, 'movie_detail.html', {
             "data": data,
             "reviews": reviews,
             "rating": rating,
-            "total_likes": dict_review_id_to_total_likes
+            "total_likes": dict_review_id_to_total_likes,
+            "map_review_id_to_voter_id": map_review_id_to_voter_id
         })
 
 

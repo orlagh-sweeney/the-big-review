@@ -52,11 +52,15 @@
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'review_like' r.id %}" method="POST">
                                 {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" value="dislike" class="btn-like"><i class="fa-solid fa-heart"></i></button>
-                                {% else %}
-                                <button type="submit" value="like" class="btn-like"><i class="fa-regular fa-heart"></i></button>
-                                {% endif %}
+                                {% for key, value in map_review_id_to_voter_id.items %}
+                                    {% if r.id == key %}
+                                    {% if user.id in value %}
+                                    <button type="submit" value="dislike" class="btn-like"><i class="fa-solid fa-heart"></i></button>
+                                    {% else %}
+                                    <button type="submit" value="like" class="btn-like"><i class="fa-regular fa-heart"></i></button>
+                                    {% endif %}
+                                    {% endif %}
+                                {% endfor %}
                             </form>   
                             {% else %}
                             <span class="btn-like"><i class="fa-regular fa-heart"></i></span> 
