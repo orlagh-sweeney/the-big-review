@@ -209,7 +209,27 @@ TEST       | DESIRED RESULT          | PASS/FAIL |
 
 ## Credit
 ### Content
+- Movie specific content was provided by the [TMDB API](https://www.themoviedb.org/). 
+- All other content was written by the developer.
+
 ### Media
+- Movie images were obtained from the [TMDB API](https://www.themoviedb.org/).
+- All other images were sourced from [Pexels](https://pixabay.com/):
+    - The hero image is friends-at-a-movie-house-8263319 (https://www.pexels.com/photo/friends-at-a-movie-house-8263319/) by cottonbro studio (https://www.pexels.com/@cottonbro/)
+    - The placeholder image for movies with movies with no poster path is spotlight-on-a-red-curtain-4722571/(https://www.pexels.com/photo/spotlight-on-a-red-curtain-4722571/) by cottonbro studio (https://www.pexels.com/@cottonbro/);
+
 ### Code
+- [Stackoverflow](https://stackoverflow.com/) and [W3Schools](https://www.w3schools.com/) were used throughout the development to educate myself and to seek help and clarification features. In particular I used the following sources:
+    - How to use groupby in Django: answer by Stackoverflow user [Alvaro](https://stackoverflow.com/a/19102493)
+    - How to access a dictonary element using Jinga: answer by [russian_spy](https://stackoverflow.com/a/6285769)
+- [Bootsrap5](https://getbootstrap.com/) was used to add elements including cards for movies, the navigation bar and the search bar. 
+- [Django](https://www.djangoproject.com/) documentation was referred to throughout development. 
+- [Code Institute](https://codeinstitute.net/de/):
+    - Code Insitute full stack walkthrough projects were referred to when setting up the project. Elements of these projects were used and adapted to suit this project.
+- [TMDB API](https://www.themoviedb.org/) the API documentation was used to set up the API queries for movie search and movie detail.
+- [DevWithMe](https://www.youtube.com/watch?v=tm9Yps3IkmQ) this YouTube video was watched to learn how to inject the users search query into the API request URL and display the API data in html.
 
 ## Acknowledgements
+- Thank you to my mentor Marcel for his feedback and suggestions at each stage of the project.
+- Thank you to Jason and Martin from Code Institute Tutor Support for helping me along the way. 
+- Thank you to Code Institute for providing me with the tools and skills to complete this project. 
