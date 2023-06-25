@@ -206,6 +206,30 @@ TEST       | DESIRED RESULT          | PASS/FAIL |
 ### Bugs
 
 ## Deployment
+The program was developed in Gitpod. It was then commited and pushed to GitHub.
+The finished project was deployed in Heroku. 
+Deployment to Heroku was completed using the following steps: 
+1. Open and login to [Heroku](https://id.heroku.com/login).
+2. From the dashboard, click 'New', then click 'Create new app' from the dropdown menu. 
+3. Enter the App name, choose a region, then click 'Create app'.
+4. Navigate to the 'Settings' tab.
+5. Within 'Settings', navigate to 'Convig Vars'. Click 'Reveal Config Vars'.
+6. Two config vars need to be added using the following 'KEY' and 'VALUE' pairs:
+    1. KEY = 'CREDS', VALUE = Copy and paste the entire contents of the creds.json file into this field. Then click 'Add'.
+    2. KEY = 'PORT', VALUE = '8000'. Then click 'Add'.
+7. Within 'Settings', navigate to 'Buildpack'. 
+8. Click 'Add buildpack'. Select 'Python', then click 'Save changes'.
+9. Click 'Add buildpack' again. Select 'nodejs', then click 'Save changes'.
+    - Ensure that these buildpacks are in the correct order: Python on top and nodejs underneath. 
+    - If they are in the wrong order, click and drag to fix this. 
+10. Navigate to the 'Deploy' tab. 
+11. Within 'Deploy', navigate to 'Deployment method'. 
+12. Click on 'GitHub'. Navigate to 'Connect to GitHub' and click 'Connect to GitHub' 
+13. Within 'Connect to GitHub', use the search function to find the repository to be deployed. Click 'Connect'.
+14. Navigate to either 'Automatic Deploys' or 'Manual Deploys' to choose which method to deploy the application.
+15. Click on 'Enable Automatic Deploys' or 'Deploy Branch' respectively, depending on chosen method. 
+16. Once the app is finished building, a message saying 'Your app was successfully deployed' will appear.
+17. Click 'View' to see the deployed app. 
 
 ## Credit
 ### Content
