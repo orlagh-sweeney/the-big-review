@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-orlaghsween-thebigrevie-t2vfe9t36h1.ws-eu100.gitpod.io',
@@ -52,8 +52,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    'fontawesomefree',
     'cloudinary',
+    'fontawesomefree',
     'django_summernote',
     'crispy_forms',
     'moviereview',
