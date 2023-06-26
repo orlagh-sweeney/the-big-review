@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'fontawesomefree',
     'django_summernote',
     'crispy_forms',
     'moviereview',
