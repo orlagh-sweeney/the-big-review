@@ -236,24 +236,19 @@ class ReviewLike(View):
         """
         Add and delete review likes to/from the database
         """
-
         review = get_object_or_404(Review, id=review_id)
         movie_id = review.movie_id
         voter = request.user
-
-        total_likes = ReviewLikes.objects.filter(review=review).count()
-        print(total_likes)
 
         # check if the user has already liked the review
         # if they have, delete the review like object from the database
         try:
             liked_review = ReviewLikes.objects.get(voter=voter, review=review)
             liked_review.delete()
-            total_likes = total_likes - 1
+
         # if the user has not liked the review,
         # add a new review like object to the database
         except ReviewLikes.DoesNotExist:
             ReviewLikes.objects.create(voter=voter, review=review, likes=1)
-            total_likes = total_likes + 1
 
         return HttpResponseRedirect(reverse("moviedetail", args=[movie_id]))
