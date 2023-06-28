@@ -5,7 +5,9 @@ from django.contrib.auth.models import User
 class Review(models.Model):
     """ Review model """
     title = models.CharField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='reviews'
+    )
     movie_id = models.IntegerField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -29,8 +31,12 @@ class Review(models.Model):
 
 class ReviewLikes(models.Model):
     """ Review likes model """
-    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name='likes')
-    voter = models.ForeignKey(User, on_delete=models.CASCADE, related_name='voter_likes')
+    review = models.ForeignKey(
+        Review, on_delete=models.CASCADE, related_name='likes'
+    )
+    voter = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='voter_likes'
+    )
     LIKES = [
         (1, 'like'),
         (-1, 'dislike'),

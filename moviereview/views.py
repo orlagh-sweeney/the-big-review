@@ -76,11 +76,14 @@ class MovieDetailView(View):
         reviews = Review.objects.filter(movie_id=f'{movie_id}')
 
         # Calculate the average movie rating
-        rating = Review.objects.filter(movie_id=f'{movie_id}').aggregate(Avg("rating"))
+        rating = Review.objects.filter(
+            movie_id=f'{movie_id}').aggregate(Avg("rating"))
         rating = str(rating['rating__avg'])[0:3]
 
         # Calculate total review likes
-        total_likes = ReviewLikes.objects.all().values('review').annotate(total=Count('id'))
+        total_likes = ReviewLikes.objects.all().values('review').annotate(
+            total=Count('id')
+        )
         dict_review_id_to_total_likes = {}
         for t in total_likes:
             dict_review_id_to_total_likes[t['review']] = t['total']
@@ -101,13 +104,18 @@ class MovieDetailView(View):
         map_review_id_to_voter_id = {}
         for review_id_iterator in df_reviews_and_likes['id'].unique():
             # Filter rows in ReviewLikes for a given review
-            df_likes_review_id = df_reviews_and_likes[df_reviews_and_likes['review_id'] == review_id_iterator]
+            df_likes_review_id = \
+                df_reviews_and_likes[
+                    df_reviews_and_likes['review_id'] == review_id_iterator
+                ]
 
             # Get list of voters that liked that review
-            voters_for_review_id = list(df_likes_review_id['voter_id'].unique())
+            voters_for_review_id = \
+                list(df_likes_review_id['voter_id'].unique())
 
             # Update map with review_id (key) and list of voters (value)
-            map_review_id_to_voter_id[review_id_iterator] = voters_for_review_id
+            map_review_id_to_voter_id[review_id_iterator] = \
+                voters_for_review_id
 
         return render(request, 'movie_detail.html', {
             "data": data,
@@ -137,14 +145,16 @@ class AddReviewView(View):
         the relevant movie detail page
         """
 
-        reviewform = ReviewForm(data=request.POST)  
+        reviewform = ReviewForm(data=request.POST)
 
         if reviewform.is_valid():
             reviewform.instance.author = request.user
             review = reviewform.save(commit=False)
             review.movie_id = movie_id
             review.save()
-            messages.success(request, "Your review has been sucessfully added.")
+            messages.success(
+                request, "Your review has been sucessfully added."
+            )
         else:
             reviewform = ReviewForm()
 
@@ -181,7 +191,9 @@ class EditReviewView(View):
             review = reviewform.save(commit=False)
             review.movie_id = movie_id
             review.save()
-            messages.success(request, "Your review has been sucessfully updated.")
+            messages.success(
+                request, "Your review has been sucessfully updated."
+            )
         else:
             reviewform = ReviewForm()
 
@@ -205,7 +217,7 @@ class DeleteReviewView(View):
     def post(self, request, review_id, movie_id, *args, **kwargs):
         """
         delete the review and redirec the user back to the movie detail page
-        """ 
+        """
         queryset = Review.objects.all()
         review = get_object_or_404(queryset, id=review_id)
         movie_id = review.movie_id
