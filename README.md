@@ -237,15 +237,15 @@ The following validators were used to test the code:
 - [pycodestlye](https://pypi.org/project/pycodestyle/): No errors were reported when passing the final python code through the validator.  <br>
 
 The validators were used throughout the development stage of the website as part of ongoing testing and at the end of the project to complete a final code check. Examples of errors and warnings can be found below which were all resolved: <br>
-    - Example 1: HTML Errors due to a missing closing div tag on the sign up page: <br> <image src="" width="600px"></image>
-    - Example 2: HTML Errors on a width attribute. Styling added to custom css file to resolve: <br> <image src="" width="600px"></image>
-    - Example 3: Python errors for line length and trailing white spaces: <br> <image src="" width="600px"></image>
+- Example 1: HTML Errors due to a missing closing div tag on the sign up page: <br> <image src="assets/readme/html-errors-1.png" width="600px"></image>
+- Example 2: HTML Errors on a width attribute. Styling added to custom css file to resolve: <br> <image src="assets/readme/html-errors-2.png" width="600px"></image>
+- Example 3: Python errors for line length and trailing white spaces: <br> <image src="assets/readme/pycode-errors.png" width="600px"></image>
 
 Unresolved python errors:
 - The two API request URLS in the views.py file were flagged as errors but have been left as they are. 
 
 ### Automated Tests
-Automated tests were written for forms.py, models.py and views.py. Coverage was used to generate a report to see how much code was tested. <br> <image src="" width="600px"></image>
+Automated tests were written for forms.py, models.py and views.py. Coverage was used to generate a report to see how much code was tested. <br> <image src="assets/readme/coverage-report.png" width="600px"></image>
 
 ### Feature Testing
 The following manual tests were carried out:
