@@ -21,7 +21,16 @@ The project can be viewed here:
     - [Models](#models)
     - [Wireframes](#wireframes)
 3. [Features](#features)
-
+    - [General](#general)
+    - [Home Page](#home-page)
+    - [Search Results Page](#search-results-page)
+    - [Movie Detail Page](#movie-detail-page)
+    - [Add Review Page](#add-review-page)
+    - [Edit Review Page](#edit-review-page)
+    - [Delete Review Page](#delete-review-page)
+    - [Register Page](#register-page)
+    - [Login Page](#login-page)
+    - [Logout Page](#logout-page)
 4. [Technololgies Used](#technologies-used)
     - [Languages](#languages)
     - [Frameworks, Libraries and Programmes](#frameworks-libraries-and-programmes)
@@ -89,7 +98,58 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
 - [Balsamiq](https://balsamiq) was used to develop wireframes for mobile and desktop in the planning stage of the website. 
 
 ## Features
+### General
+- The website incorporates a responsive design so it can be used across multiple device sizes. 
+- The website uses a consistent colour scheme across the site. 
+- Each page has a responsive navigation bar containing the logo and nav menu. The nav bar turns into a burger menu on mobile devices. <br>
+<image src="" width="600px"></image>
+- Each page has a repsonsive footer with social media links. Social media links open in a new browser window.<br>
+<image src="" width="600px"></image>
 
+### Home Page
+- Search Bar
+    - The home page has a search bar where users can type in query to find a movie. <br><image src="" width="600px"></image>
+- Hero Image
+    - The home page has a photograph of people in a cinema. The photo is dark to match the website's dark theme. <br><image src="" width="600px"></image>
+
+### Search Results Page
+- Search results are displayd using bootsrap cards which have the following details:
+    - Movie title
+    - Movie poster
+    - View Movie button
+- Results are displayed in rows of 3. 
+- On mobile devices, 1 result is displayed per row.<br>
+<image src="" width="600px"></image>
+
+### Movie Detail Page
+- This page displays the following movie data:
+    - Movie title (TMDB API data)
+    - Movie poster (TMDB API data - a placeholder image is displayed if no poster is found in the API request)
+    - Genre (TMDB API data)
+    - Summary (TMDB API data)
+    - Rating (average rating calculated from ratings left by TheBigReview users)
+- This page displays movie reviews left by TheBigReview users. <br><image src="" width="600px"></image>
+- The 'Leave a review' button allows users to add a review for this movie. <br><image src="" width="600px"></image>
+- Users can like others peoples reviews if they are logged in. <br><image src="" width="600px"></image>
+- Users can access edit and delete buttons for reviews they have left. <br><image src="" width="600px"></image>
+
+### Add Review Page
+- This page displays a form for users to leave a review. <br><image src="" width="600px"></image>
+
+### Edit Review Page
+- This page displays a pre-populated form for users to edit a review. <br><image src="" width="600px"></image>
+
+### Delete Review Page
+- This page displays a form for users to delete a review. <br><image src="" width="600px"></image>
+
+### Register Page
+- This page displays a form for users to create an account on TheBigReview. <br><image src="" width="600px"></image>
+
+### Login Page
+- This page displays a form for users to login into their account. <br><image src="" width="600px"></image>
+
+### Logout Page
+- This page displays a form for users to logout of their account. <br><image src="" width="600px"></image>
 
 ## Technologies Used
 ### Languages
