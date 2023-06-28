@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-orlaghsween-thebigrevie-t2vfe9t36h1.ws-eu100.gitpod.io',
+    '8000-orlaghsween-thebigrevie-t2vfe9t36h1.ws-eu101.gitpod.io',
     'the-big-review.herokuapp.com',
     'localhost',
 ]
