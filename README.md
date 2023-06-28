@@ -37,6 +37,7 @@ The project can be viewed here:
 5. [Testing](#testing)
     - [Testing User Stories](#testing-user-stories)
     - [Code Validation](#code-validation)
+    - [Automated Tests](#automated_tests)
     - [Feature Testing](#feature-testing)
     - [Bugs](#bugs)
 6. [Deployment](#deployment)
@@ -185,6 +186,7 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
 - [W3C Markup Validator](https://validator.w3.org/): this was used throughout the project to validate HTML code. 
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/): this was used throughout the project to validate CSS code. 
 - [CI Python Linter](https://pep8ci.herokuapp.com/): this was used to validate python code.
+- [pycodestlye](https://pypi.org/project/pycodestyle/): this was used to validate python code.
 - [JSHint](https://jshint.com/): this was used to validate Javascript code. 
 - [Responsive Design Checker](https://www.responsivedesignchecker.com/): this was used to check responsiveness on various device sizes. 
 - [Am I Respsonsive?](https://ui.dev/amiresponsive): this was used to create an image to show how the site looks on different device sizes for this README file. 
@@ -228,6 +230,23 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
     - The user can also unlike by clicking the like button again. 
 
 ### Code Validation
+The following validators were used to test the code:
+- [W3C Markup Validator](https://validator.w3.org/): No errors were reported when passing the final HTML code through the validator. 
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/): No errors were reported when passing the final CSS code through the validator. <br>
+- [JSHint](https://jshint.com/): No errors were reported when passing the final javascript code through the validator. <br>
+- [pycodestlye](https://pypi.org/project/pycodestyle/): No errors were reported when passing the final python code through the validator.  <br>
+
+The validators were used throughout the development stage of the website as part of ongoing testing and at the end of the project to complete a final code check. Examples of errors and warnings can be found below which were all resolved: <br>
+    - Example 1: HTML Errors due to a missing closing div tag on the sign up page: <br> <image src="" width="600px"></image>
+    - Example 2: HTML Errors on a width attribute. Styling added to custom css file to resolve: <br> <image src="" width="600px"></image>
+    - Example 3: Python errors for line length and trailing white spaces: <br> <image src="" width="600px"></image>
+
+Unresolved python errors:
+- The two API request URLS in the views.py file were flagged as errors but have been left as they are. 
+
+### Automated Tests
+Automated tests were written for forms.py, models.py and views.py. Coverage was used to generate a report to see how much code was tested. <br> <image src="" width="600px"></image>
+
 ### Feature Testing
 The following manual tests were carried out:
 #### General: base.html
@@ -340,6 +359,9 @@ Boostrap Alert message | Alert messages automtically disappear after 2.5 seconds
 ### Resovled Bugs:
 1. Fontawesome and Cloudinary deployment bug:
 When setting DEBUG to False to test the functionality of static files hosted on Cloudinary, the application would not deploy on Heroku. The build log error pointed to a problem between Cloudinary and the fontawesome solid assets. Fontawesome was originally setup as a package for this project, by doing it this way Cloudinary stored each fontawesome icon as an asset meaning the Cloudinary static folder had 2700 assets. I attempted to delete the static folder from Cloudinary and set it up again but the folder would not delete and the issue was not resolved. I then uninstalled Fontawesome as a package and instead use the CDN link to access icons. This fixed the issue with being able to deploy the site to Heroku. 
+
+2. URL bug:
+The deployed site was unable to render to edit page due to an error in the URL page. The error was in the href on the movie_detail page. 
 
 ### Unresolved Bugs:
 1. Pagination:
