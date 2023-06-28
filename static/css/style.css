@@ -78,6 +78,10 @@ body {
     color:#1AE6AF
 }
 
+.tmdb-logo {
+    width: 40%;
+}
+
 /* style buttons */
 
 .btn {
