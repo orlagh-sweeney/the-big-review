@@ -189,7 +189,6 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
 - [Responsive Design Checker](https://www.responsivedesignchecker.com/): this was used to check responsiveness on various device sizes. 
 - [Am I Respsonsive?](https://ui.dev/amiresponsive): this was used to create an image to show how the site looks on different device sizes for this README file. 
 
-
 ## Testing
 ### Testing User Stories
 1. As a site user I can search movies by name/keyword so that I can find a specific movie.

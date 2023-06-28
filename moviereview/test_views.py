@@ -53,7 +53,7 @@ class TestAddReviewView(TestCase):
 
 class TestEditReviewView(TestCase):
 
-    def test_get_add_review_page(self):
+    def test_get_edit_review_page(self):
         movie_id = 123
         user = User.objects.create_user(
             username='testuser',
