@@ -9,7 +9,7 @@
 <!-- Signup page with the signup form -->
 <div class="container">
     <div class="row align-items-center justify-content-center">
-        <div class="col-md-8 mt-3 offset-md-5 px-5 ps-md-0">
+        <div class="col-md-8 mt-3 offset-md-3 px-5 ps-md-0">
             <h1>{% trans "Sign Up" %}</h1>
             <!-- If the user already has an account they are redirected to the login page -->
             <p>{% blocktrans %}Already have an account? Then please <a class="account-link"
@@ -19,7 +19,7 @@
 
     <!-- sign up form -->
     <div class="row align-items-center justify-content-center">
-        <div class="col-md-8 mt-3 offset-md-5 px-5 ps-md-0">
+        <div class="col-md-6 mt-3 offset-md-1 px-5 ps-md-0">
             <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                 {{ form.as_p }}

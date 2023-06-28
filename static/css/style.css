@@ -115,7 +115,7 @@ body {
     color: #1AE6AF !important;
 }
 
-/* style account registration and login */
+/* style account registration and login allauth forms */
 
 .account-link {
     color: #1AE6AF;
@@ -123,6 +123,27 @@ body {
 
 .account-link:hover {
     color: #FFFFFF;
+}
+
+.signup input {
+    width: 100%;
+    display: block;
+    border: 0;
+    margin-top: 1%;
+    padding: 1%;
+}
+
+#id_password, #id_login {
+    width: 100%;
+    display: block;
+    border: 0;
+    margin-top: 1%;
+    padding: 1%;
+}
+
+#id_remember {
+    display: block;
+    margin-top: 1%;
 }
 
 /* style review cards */
