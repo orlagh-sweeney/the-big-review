@@ -230,38 +230,103 @@ The following manual tests were carried out:
 #### General: base.html
 TEST       | DESIRED RESULT          | PASS/FAIL |
 ---------- | ----------------------- | --------- |
+Logo | When the logo is clicked, the user is brought back to the home page | PASS
+Authenticated user | If a site user is logged in, the navigation menu displays Home and Logout nav links | PASS
+Unauthenticated user | If a site user is not logged in, the navigation menu displays Home, Register and Login nav links | PASS
+Mobile menu | On mobile devices, a burger menu is used to display nav links | PASS
+Home nav link | Brings the user to the home page | PASS
+Register nav link | Brings the user to the signup page | PASS
+Login nav link | Brings the user to the login page | PASS
+Logout nav link | Brings the user to the logout page | PASS
+Footer links | When clicked, footer links open in a new browser window | PASS
 
 #### Home Page: index.html 
 TEST       | DESIRED RESULT          | PASS/FAIL |
 ---------- | ----------------------- | --------- |
+Search Bar | The user can type in the search bar | PASS
+Search Button | When clicked, the user is brought to the search_results page | PASS 
 
 #### Search Results: searchresults.html
 TEST       | DESIRED RESULT          | PASS/FAIL |
 ---------- | ----------------------- | --------- |
+Results | The API processes the request and displays relevant movie results | PASS
+Results display | Results are displayed in rows of 3 | PASS
+Results mobile display | Results are displayed in rows of 1 | PASS
+Placeholder image | If a movie does not have a poster to display, a placeholder image is displayed | PASS
+No results | If the API does not find any movies matching the query, the user is shown a message explaining this | PASS
+View Movie Button | Brings the user to the correct movie detail page | PASS
+Pagination | The search results are paginated | FAIL
 
 #### Movie Detail: moviedetail.html
 TEST       | DESIRED RESULT          | PASS/FAIL |
 ---------- | ----------------------- | --------- |
+Movie data | The API processes the request and displays the correct movie data | PASS
+Leave a review Button | When clicked, the user is brought to the add_review page | PASS
+Movie reviews | The correct movie reviews are retrieved from the database and displayed | PASS
+Edit Button visibility | If the user is authenticated and the user is the review author, the edit button is visible | PASS
+Edit Button | Brings the user to the edit_review page | PASS
+Delete Button visibility | If the user is authenticated and the user is the review author, the delete button is visible | PASS
+Delete Button | Brings the user to the delete_review page | PASS
+Like Button | If the user is authenticated they can like and unlike a review | PASS
+Like count | The total number of likes on a review increases/decreases when a user likes/unlikes a review | PASS
 
 #### Add Review: add_review.html
 TEST       | DESIRED RESULT          | PASS/FAIL |
 ---------- | ----------------------- | --------- |
+Authenticated user | If the user is logged in, the review form is visible | PASS
+Unauthenticated user | If the user is not logged in, a message is displayed telling them that they must be logged in to leave a review | PASS
+Review form | The reivew form loads with the correct form fields | PASS
+Required fields | If the user does not complete a required field they are shown a message that it needs to be completed | PASS 
+Submit Review Button | Adds the review to the database and redirects the user back to the relevant movie detail page | PASS
+Success message | The user is shown a message that their review has been submitted | PASS
 
 #### Edit Review: edit_review.html
 TEST       | DESIRED RESULT          | PASS/FAIL |
 ---------- | ----------------------- | --------- |
+Authenticated user | If the user is logged in AND the user is the review author, the review form is visible | PASS
+Unauthenticated user | If the user is not logged in and/or is not the review author, a message is displayed telling them that they do not have permission to view this page | PASS
+Pre-populated form fields | The form loads and is pre-populated with the correct data from the database | PASS 
+Update Review Button | Updates the review in the database and redirects the user back to the relevant movie detail page | PASS
+Success message | The user is shown a message that their review has been submitted | PASS
 
-#### Login: login.html
+#### Delete Review: delete_review.html
 TEST       | DESIRED RESULT          | PASS/FAIL |
 ---------- | ----------------------- | --------- |
-
-#### Logout: logout.html
-TEST       | DESIRED RESULT          | PASS/FAIL |
----------- | ----------------------- | --------- |
+Authenticated user | If the user is logged in AND the user is the review author, the delete form is visible | PASS
+Unauthenticated user | If the user is not logged in and/or is not the review author, a message is displayed telling them that they do not have permission to view this page | PASS
+Delete form | The delete form loads with the correct form fields | PASS
+Delete Review Button | Deletes the review from the database and redirects the user back to the relevant movie detail page | PASS
+Success message | The user is shown a message that their review has been submitted | PASS
 
 #### Register: signup.html
 TEST       | DESIRED RESULT          | PASS/FAIL |
 ---------- | ----------------------- | --------- |
+Register form | The correct form and form fields are displayed | PASS 
+Unique username | If the user chooses a username that already exists in the database they are shown a warning | PASS
+Short password | If their chosen password is too short/weak they are shown a warning | PASS
+Confirm password | The user must confirm their password in order to sign up | PASS 
+Sign Up Button | The user is added to the database, logged in and redirected back to the homepage | PASS
+Success message | The user is shown a message that they are logged in | PASS
+
+#### Login: login.html
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Login form | The correct form and form fields are displayed | PASS
+Credentials | If the users credentials do not match, the user is shown a warning that they were incorrect | PASS
+Sign In Button | The user is logged in and redirected back to the homepage | PASS
+Success message | The user is shown a message that they have logged in | PASS
+
+#### Logout: logout.html
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Logout Form | The correct form and form fields are displayed | PASS
+Sign Out Button | The user is signed out and redirected back to the homepage | PASS
+Success message | The user is shown a message that they have signed out | PASS
+
+#### Cascade: models
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Deleted User | If a user is deleted their reviews and review likes are also deleted from the database | PASS 
 
 ### Bugs
 
