@@ -16,9 +16,9 @@
                 <div class="col-md-4">    
                     <div class="card d-flex my-2 mx-2">
                         {% if m.poster_path == Null %}
-                        <img src="https://res.cloudinary.com/orlagh-dev/image/upload/f_auto,q_auto/hwafs3yu2qh5srydsb9r" class="card-img-top" alt="...">
+                        <img src="https://res.cloudinary.com/orlagh-dev/image/upload/f_auto,q_auto/hwafs3yu2qh5srydsb9r" class="card-img-top" alt="placeholder movie poster">
                         {% else %}
-                        <img src="https://image.tmdb.org/t/p/w500{{ m.poster_path }}" class="card-img-top" alt="...">
+                        <img src="https://image.tmdb.org/t/p/w500{{ m.poster_path }}" class="card-img-top" alt="movie poster">
                         {% endif %}
                         <div class="card-body bg">
                             <h5 class="card-title">{{ m.title }}</h5>

@@ -9,7 +9,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 px-4 pb-4">
-            <img src="https://image.tmdb.org/t/p/w500{{ data.poster_path }}" class="card-img-top" alt="...">
+            {% if m.poster_path == Null %}
+            <img src="https://res.cloudinary.com/orlagh-dev/image/upload/f_auto,q_auto/hwafs3yu2qh5srydsb9r" class="card-img-top" alt="placeholder movie poster">
+            {% else %}
+            <img src="https://image.tmdb.org/t/p/w500{{ data.poster_path }}" class="card-img-top" alt="movie poster">
+            {% endif %}
         </div>
         <div class="col-md-6 px-4">
             <h3><strong>Movie: </strong>{{ data.title }}</h3>
@@ -29,7 +33,6 @@
     <div class="row">
         <div class="col-md-6 offset-md-3 text-center review">
             <a href="addreview/{{ m.id }}" class="btn btn-outline-success text-center mb-3 w-100">Leave a review +</a>
-            <input class="form-control me-2 no-outline" type="text" hidden aria-label="Search" name="p" value="1">
         </div>
     </div>
     <div class="row review">
