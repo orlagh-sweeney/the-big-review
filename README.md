@@ -1,4 +1,7 @@
 # The Big Review
+
+<image src="assets/readme/primary-image.png" width="700px"></image>
+
 The Big Review is a movie review website which uses the TMDB API to get movie data. Users can carry out the following actions on the site:
 1. Create an account and login
 2. Read reviews
@@ -111,15 +114,15 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
 - The website incorporates a responsive design so it can be used across multiple device sizes. 
 - The website uses a consistent colour scheme across the site. 
 - Each page has a responsive navigation bar containing the logo and nav menu. The nav bar turns into a burger menu on mobile devices. <br>
-<image src="" width="600px"></image>
+<image src="assets/readme/feature-nav.png" width="600px"></image>
 - Each page has a repsonsive footer with social media links. Social media links open in a new browser window.<br>
-<image src="" width="600px"></image>
+<image src="assets/readme/feature-footer.png" width="600px"></image>
 
 ### Home Page
 - Search Bar
-    - The home page has a search bar where users can type in query to find a movie. <br><image src="" width="600px"></image>
+    - The home page has a search bar where users can type in query to find a movie. <br><image src="assets/readme/feature-search.png" width="600px"></image>
 - Hero Image
-    - The home page has a photograph of people in a cinema. The photo is dark to match the website's dark theme. <br><image src="" width="600px"></image>
+    - The home page has a photograph of people in a cinema. The photo is dark to match the website's dark theme. <br><image src="assets/readme/feature-hero.png" width="600px"></image>
 
 ### Search Results Page
 - Search results are displayd using bootsrap cards which have the following details:
@@ -128,7 +131,7 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
     - View Movie button
 - Results are displayed in rows of 3. 
 - On mobile devices, 1 result is displayed per row.<br>
-<image src="" width="600px"></image>
+<image src="assets/readme/feature-results.png" width="600px"></image>
 
 ### Movie Detail Page
 - This page displays the following movie data:
@@ -136,29 +139,29 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
     - Movie poster (TMDB API data - a placeholder image is displayed if no poster is found in the API request)
     - Genre (TMDB API data)
     - Summary (TMDB API data)
-    - Rating (average rating calculated from ratings left by TheBigReview users)
-- This page displays movie reviews left by TheBigReview users. <br><image src="" width="600px"></image>
-- The 'Leave a review' button allows users to add a review for this movie. <br><image src="" width="600px"></image>
-- Users can like others peoples reviews if they are logged in. <br><image src="" width="600px"></image>
-- Users can access edit and delete buttons for reviews they have left. <br><image src="" width="600px"></image>
+    - Rating (average rating calculated from ratings left by TheBigReview users) <br><image src="assets/readme/feature-moviedetail.png" width="600px"></image>
+- This page displays movie reviews left by TheBigReview users. 
+- The 'Leave a review' button allows users to add a review for this movie. 
+- Users can like others peoples reviews if they are logged in. 
+- Users can access edit and delete buttons for reviews they have left. <br><image src="assets/readme/feature-reviews.png" width="600px"></image>
 
 ### Add Review Page
-- This page displays a form for users to leave a review. <br><image src="" width="600px"></image>
+- This page displays a form for users to leave a review. <br><image src="assets/readme/feature-add.png" width="600px"></image>
 
 ### Edit Review Page
-- This page displays a pre-populated form for users to edit a review. <br><image src="" width="600px"></image>
+- This page displays a pre-populated form for users to edit a review. <br><image src="assets/readme/feature-edit.png" width="600px"></image>
 
 ### Delete Review Page
-- This page displays a form for users to delete a review. <br><image src="" width="600px"></image>
+- This page displays a form for users to delete a review. <br><image src="assets/readme/feature-delete.png" width="600px"></image>
 
 ### Register Page
-- This page displays a form for users to create an account on TheBigReview. <br><image src="" width="600px"></image>
+- This page displays a form for users to create an account on TheBigReview. <br><image src="assets/readme/feature-register.png" width="600px"></image>
 
 ### Login Page
-- This page displays a form for users to login into their account. <br><image src="" width="600px"></image>
+- This page displays a form for users to login into their account. <br><image src="assets/readme/feature-login.png" width="600px"></image>
 
 ### Logout Page
-- This page displays a form for users to logout of their account. <br><image src="" width="600px"></image>
+- This page displays a form for users to logout of their account. <br><image src="assets/readme/feature-logout.png" width="600px"></image>
 
 ## Technologies Used
 ### Languages
