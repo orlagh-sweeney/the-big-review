@@ -146,6 +146,12 @@ body {
     margin-top: 1%;
 }
 
+/* style add review form */
+
+#id_title, #id_body, #div_id_rating {
+    margin-bottom: 1%;
+}
+
 /* style review cards */
 
 .review .btn-outline-success {
