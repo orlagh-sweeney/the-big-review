@@ -48,17 +48,25 @@ The project can be viewed here:
 
 ## User Experience (UX)
 ### Project Goals
+- Build a modern movie review website using movie data from the TMDB API.
+- Ensure the website is fully responsive. 
+- Implement full CRUD functionality so users can interact with the website and modify data.
+- Build an intuative website that provides users with feedback when as they interact with the various features.
+- Implement authentification layers to key pages so the site is robust. 
+
 ### User Stories
 1. As a site user I can search movies by name/keyword so that I can find a specific movie.
-2. As a site user I can view a paginated list of movie results so that I can easily select a movie to view.
-3. As a site user I can click on a movie so that I can see information about the movie.
-4. As a site user I can register an account so that I can leave reviews and like reviews.
-5. As a site user I can login so that I can leave new reviews and edit reviews.
-6. As a site user I can read reviews so that I can see what people think of the movie.
-7. As a site user I can create a new review so that I can be involved in the community.
-8. As a site user I can edit my reviews so that my reviews are accurate and up-to-date.
-9. As a site user I can delete a review so that I can only show reviews that I want.
-10. As a site user I can like or unlike reviews so that I can show my support for their opinion.
+2. As a site user I can click on a movie so that I can see information about the movie.
+3. As a site user I can register an account so that I can leave reviews and like reviews.
+4. As a site user I can login so that I can leave new reviews and edit reviews.
+5. As a site user I can read reviews so that I can see what people think of the movie.
+6. As a site user I can create a new review so that I can be involved in the community.
+7. As a site user I can edit my reviews so that my reviews are accurate and up-to-date.
+8. As a site user I can delete a review so that I can only show reviews that I want.
+9. As a site user I can like or unlike reviews so that I can show my support for their opinion.
+
+### Future User Stories (to be implemented in the next iteration):
+10. As a site user I can view a paginated list of movie results so that I can easily select a movie to view.
 11. As a site user I can see a list of new movies so that I can discover new movies to watch.
 12. As a site user I can see a list of the top 10 rated movies so that I can discover good movies to watch.
 13. As a site user I can create and update my public profile so that I can share my interest and track my activity.
@@ -163,11 +171,11 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
 - [Balsamiq](https://balsamiq.com/): this was used to create wireframes in the planning stage of the project. 
 - [Font Awesome](https://fontawesome.com/): this was used to add social media icons to footer to enhance user experience. 
 - [Fontpair](https://www.fontpair.co/): this was used to find fonts that compliment each other. 
-- [Google Fonts](https://fonts.google.com/): this was used to import fonts into the style.css file.
+- [Google Fonts](https://fonts.google.com/): this was used to import fonts into the website.
 - [Coolers](https://coolors.co/): this was used to create a colour pallete for the website. 
 - [Pexels](https://www.pexels.com/): this was used to find the hero image and placeholder image for the project. 
-- [Django](https://www.djangoproject.com/): this was the web framework used.
-- [Boostrap 5](https://getbootstrap.com/): this was the CSS framework used to make the site responsive. 
+- [Django](https://www.djangoproject.com/): this was the MVC web framework used.
+- [Bootstrap 5](https://getbootstrap.com/): this was the CSS framework used to make the site responsive. 
 - [Cloudinary](https://cloudinary.com/): this was used to store static and media files.
 - [Gitpod](https://www.gitpod.io/): this was used to write, commit and to push the code to Github. 
 - [Github](https://github.com/): this was used for version control. 
@@ -176,6 +184,8 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/): this was used throughout the project to check responsiveness and debug. 
 - [W3C Markup Validator](https://validator.w3.org/): this was used throughout the project to validate HTML code. 
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/): this was used throughout the project to validate CSS code. 
+- [CI Python Linter](https://pep8ci.herokuapp.com/): this was used to validate python code.
+- [JSHint](https://jshint.com/): this was used to validate Javascript code. 
 - [Responsive Design Checker](https://www.responsivedesignchecker.com/): this was used to check responsiveness on various device sizes. 
 - [Am I Respsonsive?](https://ui.dev/amiresponsive): this was used to create an image to show how the site looks on different device sizes for this README file. 
 
@@ -186,43 +196,37 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
     - The homepage has a search bar where users can type a word to find a movie. 
     - The API processes the request and returns the relevant movie results. 
     - The user is brought to the search results page.
-2. As a site user I can view a paginated list of movie results so that I can easily select a movie to view.
-
-3. As a site user I can click on a movie so that I can see information about the movie.
+2. As a site user I can click on a movie so that I can see information about the movie.
     - Each movie has a button that brings the user to the movie detail page.
     - The correct movie data loads. 
-4. As a site user I can register an account so that I can leave reviews and like reviews.
+3. As a site user I can register an account so that I can leave reviews and like reviews.
     - The register page allows the user to create an account.
     - The user must submit a unique username and/or email.
     - They must confirm their password. 
     - Once registered, the user has access to all CRUD functionality.
-5. As a site user I can login so that I can leave new reviews and edit reviews.
+4. As a site user I can login so that I can leave new reviews and edit reviews.
     - Unauthenticated users can access the login page via the navigation menu. 
     - If an unathenticated user tries to click the 'leave a review' button on the movie_detail page, they are shown a warning that they need to login.
     - The user can use their username/email to login into the website via the login page.
-6. As a site user I can read reviews so that I can see what people think of the movie.
+5. As a site user I can read reviews so that I can see what people think of the movie.
     - All site visitors can read existing movie reviews. 
-7. As a site user I can create a new review so that I can be involved in the community.
+6. As a site user I can create a new review so that I can be involved in the community.
     - If authenticated, the user can access the add_review page via the 'leave a review' button.
     - The user can fill in the movie review form.
     - After submitting they are redirected back to the relevant movie_detail page and shown a notfication that their review has been successful.
-8. As a site user I can edit my reviews so that my reviews are accurate and up-to-date.
+7. As a site user I can edit my reviews so that my reviews are accurate and up-to-date.
     - If authenticated and if the user is the review author, an 'edit review' button is visible on their review.
     - The user is brought to the edit_review page which is populated with their review data.
     - The user can update the form to edit the review.
     - After submitting they are redirected back to the relevant movie_detail page and shown a notfication that their review has been updated.
-9. As a site user I can delete a review so that I can only show reviews that I want.
+8. As a site user I can delete a review so that I can only show reviews that I want.
     - If authenticated and if the user is the review author, a 'delete review' button is visible on their review.
     - The user is brought to the delete_review page and asked to confirm if they want to delete the review. 
     - After deleting they are redirected back to the relevant movie_detail page and shown a notfication that their review has been deleted.
-10. As a site user I can like or unlike reviews so that I can show my support for their opinion.
+9. As a site user I can like or unlike reviews so that I can show my support for their opinion.
     - If authenticated, users can click the like button on movie reviews.
     - The number of likes is shown beside the like button.
     - The user can also unlike by clicking the like button again. 
-11. As a site user I can see a list of new movies so that I can discover new movies to watch.
-12. As a site user I can see a list of the top 10 rated movies so that I can discover good movies to watch.
-13. As a site user I can create and update my public profile so that I can share my interest and track my activity.
-14. As a site user I can filter search results by genre so that I can narrow down my search
 
 ### Code Validation
 ### Feature Testing
@@ -328,7 +332,19 @@ TEST       | DESIRED RESULT          | PASS/FAIL |
 ---------- | ----------------------- | --------- |
 Deleted User | If a user is deleted their reviews and review likes are also deleted from the database | PASS 
 
+#### Alert Messages
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Boostrap Alert message | Alert messages automtically disappear after 2.5 seconds | PASS 
+
 ### Bugs
+### Resovled Bugs:
+1. Fontawesome and Cloudinary deployment bug:
+When setting DEBUG to False to test the functionality of static files hosted on Cloudinary, the application would not deploy on Heroku. The build log error pointed to a problem between Cloudinary and the fontawesome solid assets. Fontawesome was originally setup as a package for this project, by doing it this way Cloudinary stored each fontawesome icon as an asset meaning the Cloudinary static folder had 2700 assets. I attempted to delete the static folder from Cloudinary and set it up again but the folder would not delete and the issue was not resolved. I then uninstalled Fontawesome as a package and instead use the CDN link to access icons. This fixed the issue with being able to deploy the site to Heroku. 
+
+### Unresolved Bugs:
+1. Pagination:
+The site intended to paginate movie search results for better display and navigation. The django paginator feature did not work since the data was coming from an API rather than a database model. This issue has been left unresolved and will be addressed in the next iteration of the project.
 
 ## Deployment
 The program was developed in Gitpod. It was then commited and pushed to GitHub.
@@ -371,14 +387,16 @@ Deployment to Heroku was completed using the following steps:
 - [Stackoverflow](https://stackoverflow.com/) and [W3Schools](https://www.w3schools.com/) were used throughout the development to educate myself and to seek help and clarification features. In particular I used the following sources:
     - How to use groupby in Django: answer by Stackoverflow user [Alvaro](https://stackoverflow.com/a/19102493)
     - How to access a dictonary element using Jinga: answer by [russian_spy](https://stackoverflow.com/a/6285769)
-- [Bootsrap5](https://getbootstrap.com/) was used to add elements including cards for movies, the navigation bar and the search bar. 
-- [Django](https://www.djangoproject.com/) documentation was referred to throughout development. 
+- [TMDB API](https://www.themoviedb.org/) the API documentation was used to set up the API queries for movie search and movie detail.
+- [YouTube](https://www.youtube.com/): The following YouTube sources were used: 
+    - [DevWithMe](https://www.youtube.com/watch?v=tm9Yps3IkmQ) this YouTube video was watched to learn how to inject the users search query into the API request URL and display the API data in html.
+    - [A Design Who Codes](https://www.youtube.com/watch?v=45QSuJaHEss) this YouTube video was watched to learn how to change the colour of the bootsrap mobile menu icon.
 - [Code Institute](https://codeinstitute.net/de/):
     - Code Insitute full stack walkthrough projects were referred to when setting up the project. Elements of these projects were used and adapted to suit this project.
-- [TMDB API](https://www.themoviedb.org/) the API documentation was used to set up the API queries for movie search and movie detail.
-- [DevWithMe](https://www.youtube.com/watch?v=tm9Yps3IkmQ) this YouTube video was watched to learn how to inject the users search query into the API request URL and display the API data in html.
+- [Bootstrap5](https://getbootstrap.com/) was used to add elements including cards for movies, the navigation bar and the search bar. 
+- [Django](https://www.djangoproject.com/) documentation was referred to throughout development. 
 
 ## Acknowledgements
 - Thank you to my mentor Marcel for his feedback and suggestions at each stage of the project.
-- Thank you to Jason and Martin from Code Institute Tutor Support for helping me along the way. 
+- Thank you to Jason, Martin and Joanne from Code Institute Tutor Support for helping me along the way. 
 - Thank you to Code Institute for providing me with the tools and skills to complete this project. 
