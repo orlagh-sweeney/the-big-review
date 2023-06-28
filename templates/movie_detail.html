@@ -6,15 +6,20 @@
     <h1>{{ data.title }}</h1>
 </div>
 
+<!-- movie detail container -->
 <div class="container">
     <div class="row">
+
+        <!-- if the API poster path is not available then display a placeholder image -->
         <div class="col-md-6 px-4 pb-4">
-            {% if m.poster_path == Null %}
+            {% if data.poster_path == Null %}
             <img src="https://res.cloudinary.com/orlagh-dev/image/upload/f_auto,q_auto/hwafs3yu2qh5srydsb9r" class="card-img-top" alt="placeholder movie poster">
             {% else %}
             <img src="https://image.tmdb.org/t/p/w500{{ data.poster_path }}" class="card-img-top" alt="movie poster">
             {% endif %}
         </div>
+
+        <!-- display movie data from the api -->
         <div class="col-md-6 px-4">
             <h3><strong>Movie: </strong>{{ data.title }}</h3>
             <h3><strong>Release Date: </strong>{{ data.release_date }}</h3>
@@ -30,11 +35,14 @@
         </div>
     </div>
 
+    <!-- button to add a review -->
     <div class="row">
         <div class="col-md-6 offset-md-3 text-center review">
             <a href="addreview/{{ m.id }}" class="btn btn-outline-success text-center mb-3 w-100">Leave a review +</a>
         </div>
     </div>
+
+    <!-- loads movie reviews from the database -->
     <div class="row review">
         <div class="col-md-6 offset-md-3">
             {% for r in reviews %}
@@ -51,10 +59,13 @@
                     <h5 class="card-title">{{ r.title }}</h5>
                     <p class="card-text">{{ r.body }}</p>
                     <div class="row">
+                        
+                        <!-- displays the like button -->
                         <div class="col-10">
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'review_like' r.id %}" method="POST">
                                 {% csrf_token %}
+                                <!-- if the user has voted, display a full heart, if not display an empty heart -->
                                 {% for key, value in map_review_id_to_voter_id.items %}
                                     {% if r.id == key %}
                                     {% if user.id in value %}
@@ -67,13 +78,17 @@
                             </form>   
                             {% else %}
                             <span class="btn-like"><i class="fa-regular fa-heart"></i></span> 
-                            {% endif %}             
+                            {% endif %}
+                            
+                            <!-- display total likes for a review -->
                             {% for key, value in total_likes.items %}        
                                 {% if key == r.id %}
                                 <span class="review-like">{{ value }}</span>
                                 {% endif %}
                             {% endfor %}
                         </div>
+
+                        <!-- display edit and delete buttons if the user is the review author -->
                         {% if user.is_authenticated and user == r.author %}
                         <div class="col-1 text-end">
                             <a class="crud-icon" href="edit/{{ r.id }}" aria-label="edit review">

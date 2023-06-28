@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
 
-        <!-- movies cards -->
+        <!-- cards to display movie search results -->
         <div class="col-lg-12">
             <div class="row">
             {% for m in data.results %}
@@ -26,6 +26,8 @@
                         </div>
                     </div>
                 </div>
+
+            <!-- display 3 results per row -->
             {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
@@ -34,6 +36,7 @@
             </div>
         </div>
     </div>
+
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
@@ -42,7 +45,6 @@
             {% endif %}
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
             {% endif %}
         </ul>
     </nav>
