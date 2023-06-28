@@ -8,6 +8,15 @@
 
 <div class="container">
     <div class="row">
+        
+        <!-- if there are no movies to display tell the user to try again -->
+        {% if data.total_results == 0 %}
+        <div class="col-lg-12 text-center">
+            <div class="row">
+                <h5>Sorry, there are no movies matching your search. Please try again.</h5>
+            </div>
+        </div>
+        {% else %}
 
         <!-- cards to display movie search results -->
         <div class="col-lg-12">
@@ -35,6 +44,7 @@
             {% endfor %}
             </div>
         </div>
+        {% endif %}
     </div>
 
     {% if is_paginated %}
