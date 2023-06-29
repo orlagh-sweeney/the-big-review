@@ -41,6 +41,8 @@ The project can be viewed here:
     - [Testing User Stories](#testing-user-stories)
     - [Code Validation](#code-validation)
     - [Accessibility](#accessibility)
+    - [Device Testing](#device-testing)
+    - [Browser Testing](#browser-testing)
     - [Automated Tests](#automated_tests)
     - [Feature Testing](#feature-testing)
     - [Bugs](#bugs)
@@ -276,6 +278,19 @@ Register Page: <br> <image src="assets/readme/lighthouse-signup.png" width="600p
 Login Page: <br> <image src="assets/readme/lighthouse-login.png" width="600px"></image><br>
 Logout Page: <br> <image src="assets/readme/lighthouse-logout.png" width="600px"></image>
 
+### Device Testing
+The website was manually tested on the following devices with no issues:
+- Samsung Galaxy S10+
+- MacBook Pro 13"
+- Samsung 27" Desktop Monitor (s27a600uuu)
+
+### Browser Testing
+The website was tested on the following browsers with no issues:
+- Google Chrome
+- Safari
+- Mozilla Firefox
+- Microsoft Edge
+
 ### Automated Tests
 Automated tests were written for forms.py, models.py and views.py. Coverage was used to generate a report to see how much code was tested. <br> <image src="assets/readme/coverage-report.png" width="600px"></image>
 
@@ -433,14 +448,14 @@ Deployment to Heroku was completed using the following steps:
 - [Stackoverflow](https://stackoverflow.com/) and [W3Schools](https://www.w3schools.com/) were used throughout the development to educate myself and to seek help and clarification features. In particular I used the following sources:
     - How to use groupby in Django: answer by Stackoverflow user [Alvaro](https://stackoverflow.com/a/19102493)
     - How to access a dictonary element using Jinga: answer by [russian_spy](https://stackoverflow.com/a/6285769)
-- [TMDB API](https://www.themoviedb.org/) the API documentation was used to set up the API queries for movie search and movie detail.
+- [TMDB API](https://www.themoviedb.org/): the API documentation was used to set up the API queries for movie search and movie detail.
 - [YouTube](https://www.youtube.com/): The following YouTube sources were used: 
-    - [DevWithMe](https://www.youtube.com/watch?v=tm9Yps3IkmQ) this YouTube video was watched to learn how to inject the users search query into the API request URL and display the API data in html.
-    - [A Design Who Codes](https://www.youtube.com/watch?v=45QSuJaHEss) this YouTube video was watched to learn how to change the colour of the bootsrap mobile menu icon.
+    - [DevWithMe](https://www.youtube.com/watch?v=tm9Yps3IkmQ): this YouTube video was watched to learn how to inject the users search query into the API request URL and display the API data in html.
+    - [A Design Who Codes](https://www.youtube.com/watch?v=45QSuJaHEss): this YouTube video was watched to learn how to change the colour of the bootsrap mobile menu icon.
 - [Code Institute](https://codeinstitute.net/de/):
     - Code Insitute full stack walkthrough projects were referred to when setting up the project. Elements of these projects were used and adapted to suit this project.
-- [Bootstrap5](https://getbootstrap.com/) was used to add elements including cards for movies, the navigation bar and the search bar. 
-- [Django](https://www.djangoproject.com/) documentation was referred to throughout development. 
+- [Bootstrap5](https://getbootstrap.com/): was used to add elements including cards for movies, the navigation bar and the search bar. 
+- [Django](https://www.djangoproject.com/): documentation was referred to throughout development. 
 
 ## Acknowledgements
 - Thank you to my mentor Marcel for his feedback and suggestions at each stage of the project.
