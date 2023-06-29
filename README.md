@@ -40,6 +40,7 @@ The project can be viewed here:
 5. [Testing](#testing)
     - [Testing User Stories](#testing-user-stories)
     - [Code Validation](#code-validation)
+    - [Accessibility](#accessibility)
     - [Automated Tests](#automated_tests)
     - [Feature Testing](#feature-testing)
     - [Bugs](#bugs)
@@ -259,7 +260,21 @@ The validators were used throughout the development stage of the website as part
 - Example 3: Python errors for line length and trailing white spaces: <br> <image src="assets/readme/pycode-errors.png" width="600px"></image>
 
 Unresolved python errors:
-- The two API request URLS in the views.py file were flagged as errors but have been left as they are. 
+- The two API request URLS in the views.py file were flagged as errors but have been left as they are.
+
+### Accessibility
+The following tool was used to check accessibility of the website:
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/): was used to check the accessibility of the site and to see if there were issues. 
+- Lighthouse Reports:<br>
+Home Page: <br> <image src="assets/readme/lighthouse-home.png" width="600px"></image><br>
+Search Page: <br> <image src="assets/readme/lighthouse-search.png" width="600px"></image><br>
+Movie Detail Page: <br> <image src="assets/readme/lighthouse-moviedetail.png" width="600px"></image><br>
+Add Review Page: <br> <image src="assets/readme/lighthouse-addreview.png" width="600px"></image><br>
+Edit Review Page: <br> <image src="assets/readme/lighthouse-edit.png" width="600px"></image><br>
+Delete Review Page: <br> <image src="assets/readme/lighthouse-delete.png" width="600px"></image><br>
+Register Page: <br> <image src="assets/readme/lighthouse-signup.png" width="600px"></image><br>
+Login Page: <br> <image src="assets/readme/lighthouse-login.png" width="600px"></image><br>
+Logout Page: <br> <image src="assets/readme/lighthouse-logout.png" width="600px"></image>
 
 ### Automated Tests
 Automated tests were written for forms.py, models.py and views.py. Coverage was used to generate a report to see how much code was tested. <br> <image src="assets/readme/coverage-report.png" width="600px"></image>
