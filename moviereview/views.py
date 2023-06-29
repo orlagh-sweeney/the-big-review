@@ -30,7 +30,6 @@ class SearchResultsView(View):
     """ View to render movie search results """
     template_name = 'search_results.html'
     paginate_by = 9
-    print('test 1')
 
     def get(self, request, *args, **kwargs):
         """
@@ -45,7 +44,6 @@ class SearchResultsView(View):
 
         if response.status_code == 200:
             data = response.json
-            print(response.text)
 
         return render(request, 'search_results.html', {
             "data": data,
@@ -65,11 +63,9 @@ class MovieDetailView(View):
         data = None
         url = f"https://api.themoviedb.org/3/movie/{movie_id}?&api_key={api_key}&language=en-US&page=1"
         response = requests.get(url)
-        print(response)
 
         if response.status_code == 200:
             data = response.json
-            print(response.text)
 
         # Get movie reviews from the database
         movie_id = movie_id
