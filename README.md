@@ -88,6 +88,8 @@ The following colours are used in the project:
 - Aquamarine (#1AE6AF): Logo, buttons, links, icons, h1 headings.
 - White (#FFFFFF): Body text and headings.
 
+<image src="assets/readme/colour-palette.png" width="600px"></image>
+
 ## Planning
 ### Methodology
 The project was planned and implemented following agile methdology principles. Github Projects was used to manage and document this process.
@@ -118,7 +120,7 @@ The project uses two models, Review and ReviewLikes. It also uses the Django all
 The below entity relationship diagram was created using [dbdigram](https://dbdiagram.io/home) and demonstrates the relationship between the models. <br> <image src="assets/readme/erd.png" width="600px"></image>
 
 ### Wireframes
-- [Balsamiq](https://balsamiq) was used to develop wireframes for mobile and desktop in the planning stage of the website. <br> <image src="assets/readme/wireframe-home-mob.png" width="300px"></image>
+- [Balsamiq](https://balsamiq) was used to develop wireframes for mobile and desktop in the planning stage of the website. <br>
     - Home Page: <br> <image src="assets/readme/wireframe-home.png" width="600px"></image> <br> <image src="assets/readme/wireframe-home-mob.png" width="300px"></image>
     - Search Results Page: <br> <image src="assets/readme/wireframe-results.png" width="600px"></image> <br> <image src="assets/readme/wireframe-results-mob.png" width="300px"></image>
     - Movie Detail Page: <br> <image src="assets/readme/wireframe-moviedetail.png" width="600px"></image> <br> <image src="assets/readme/wireframe-moviedetail-mob.png" width="300px"></image>
