@@ -92,7 +92,7 @@ The following colours are used in the project:
 
 ## Planning
 ### Methodology
-The project was planned and implemented following agile methdology principles. Github Projects was used to manage and document this process.
+The project was planned and implemented following agile methodology principles. GitHub Projects was used to manage and document this process.
 
 The GitHub project can be viewed here: [The Big Review User Stories](https://github.com/users/orlagh-sweeney/projects/4)
 
@@ -144,7 +144,7 @@ The below entity relationship diagram was created using [dbdigram](https://dbdia
     - The home page has a photograph of people in a cinema. The photo is dark to match the website's dark theme. <br><image src="assets/readme/feature-hero.png" width="600px"></image>
 
 ### Search Results Page
-- Search results are displayd using bootsrap cards which have the following details:
+- Search results are displayed using bootstrap cards which have the following details:
     - Movie title
     - Movie poster
     - View Movie button
@@ -196,7 +196,7 @@ The below entity relationship diagram was created using [dbdigram](https://dbdia
 - [Fontpair](https://www.fontpair.co/): this was used to find fonts that compliment each other. 
 - [Google Fonts](https://fonts.google.com/): this was used to import fonts into the website.
 - [Coolers](https://coolors.co/): this was used to create a colour pallete for the website. 
-- [Pexels](https://www.pexels.com/): this was used to find the hero image and placeholder image for the project. 
+- [Pexels](https://www.pexels.com/): this was used to find the hero image and movie poster placeholder image for the project. 
 - [Django](https://www.djangoproject.com/): this was the MVC web framework used.
 - [Bootstrap 5](https://getbootstrap.com/): this was the CSS framework used to make the site responsive. 
 - [Cloudinary](https://cloudinary.com/): this was used to store static and media files.
@@ -212,6 +212,8 @@ The below entity relationship diagram was created using [dbdigram](https://dbdia
 - [JSHint](https://jshint.com/): this was used to validate Javascript code. 
 - [Responsive Design Checker](https://www.responsivedesignchecker.com/): this was used to check responsiveness on various device sizes. 
 - [Am I Respsonsive?](https://ui.dev/amiresponsive): this was used to create an image to show how the site looks on different device sizes for this README file. 
+
+A complete list of packages and dependencies can be viewed in the requirements.txt file. 
 
 ## Testing
 ### Testing User Stories
@@ -255,7 +257,7 @@ The below entity relationship diagram was created using [dbdigram](https://dbdia
 The following validators were used to test the code:
 - [W3C Markup Validator](https://validator.w3.org/): No errors were reported when passing the final HTML code through the validator. 
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/): No errors were reported when passing the final CSS code through the validator. <br>
-- [JSHint](https://jshint.com/): No errors were reported when passing the final javascript code through the validator. <br>
+- [JSHint](https://jshint.com/): No errors were reported when passing the final JavaScript code through the validator. <br>
 - [pycodestlye](https://pypi.org/project/pycodestyle/): No errors were reported when passing the final python code through the validator.  <br>
 
 The validators were used throughout the development stage of the website as part of ongoing testing and at the end of the project to complete a final code check. Examples of errors and warnings can be found below which were all resolved: <br>
@@ -264,12 +266,12 @@ The validators were used throughout the development stage of the website as part
 - Example 3: Python errors for line length and trailing white spaces: <br> <image src="assets/readme/pycode-errors.png" width="600px"></image>
 
 Unresolved python errors:
-- The two API request URLS in the views.py file were flagged as errors but have been left as they are.
+- The two API request URLs in the views.py file were flagged with 'line too long' errors but they have been left as they are.
 
 ### Accessibility
-The following tool was used to check accessibility of the website:
-- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/): was used to check the accessibility of the site and to see if there were issues. 
-- Lighthouse Reports:<br>
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to check the accessibility of the site and to see if there were issues. 
+
+Lighthouse Reports:<br>
 Home Page: <br> <image src="assets/readme/lighthouse-home.png" width="600px"></image><br>
 Search Page: <br> <image src="assets/readme/lighthouse-search.png" width="600px"></image><br>
 Movie Detail Page: <br> <image src="assets/readme/lighthouse-moviedetail.png" width="600px"></image><br>
@@ -367,7 +369,7 @@ Authenticated user | If the user is logged in AND the user is the review author,
 Unauthenticated user | If the user is not logged in and/or is not the review author, a message is displayed telling them that they do not have permission to view this page | PASS
 Delete form | The delete form loads with the correct form fields | PASS
 Delete Review Button | Deletes the review from the database and redirects the user back to the relevant movie detail page | PASS
-Success message | The user is shown a message that their review has been submitted | PASS
+Success message | The user is shown a message that their review has been deleted | PASS
 
 #### Register: signup.html
 TEST       | DESIRED RESULT          | PASS/FAIL |
@@ -410,7 +412,7 @@ Boostrap Alert message | Alert messages automtically disappear after 2.5 seconds
 When setting DEBUG to False to test the functionality of static files hosted on Cloudinary, the application would not deploy on Heroku. The build log error pointed to a problem between Cloudinary and the fontawesome solid assets. Fontawesome was originally setup as a package for this project, by doing it this way Cloudinary stored each fontawesome icon as an asset meaning the Cloudinary static folder had 2700 assets. I attempted to delete the static folder from Cloudinary and set it up again but the folder would not delete and the issue was not resolved. I then uninstalled Fontawesome as a package and instead use the CDN link to access icons. This fixed the issue with being able to deploy the site to Heroku. 
 
 2. URL bug:
-The deployed site was unable to render to edit page due to an error in the URL page. The error was in the href on the movie_detail page. 
+The deployed site was unable to render to edit page due to an error. The error was in the href on the movie_detail page. 
 
 ### Unresolved Bugs:
 1. Pagination:
