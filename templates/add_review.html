@@ -11,6 +11,7 @@
             {% if user.is_authenticated %}
 
             <h2>Hi {{ user.username}}, leave a review: </h2>
+            <!-- add review form -->
             <form method="post">
                 {{ review_form | crispy }}
                 {% csrf_token %}

@@ -11,6 +11,7 @@
             {% if user.is_authenticated and user == review.author %}
 
             <h2>Hi {{ user.username}}, edit your review: </h2>
+            <!-- edit review form -->
             <form method="post">
                 {{ review_form | crispy }}
                 {% csrf_token %}

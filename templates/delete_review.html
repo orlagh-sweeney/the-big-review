@@ -12,6 +12,7 @@
 
             <h2>Hi {{ user.username}}, are you sure you want to delete this review? </h2>
             <p>This action in permanent and cannot be undone.</p>
+            <!-- delete review form -->
             <form method="post">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-outline-success">Delete Review</button>
