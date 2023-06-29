@@ -105,9 +105,17 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
 - Won't Have
 
 ### Models
+The project uses two models, Review and ReviewLikes. It also uses the Django allauth User model.
+1. The Review model stores movie review data:
+    - author is a foreign key connecting to the User model.
+2. The ReviewLikes model stores data about likes on a review:
+    - review is a foreign key connecting to the Review model.
+    - voter is a foreign key connecting to the User model.
+
+The below entity relationship diagram was created using [dbdigram](https://dbdiagram.io/home) and demonstrates the relationship between the models. <br> <image src="assets/readme/erd.png" width="600px"></image>
 
 ### Wireframes
-- [Balsamiq](https://balsamiq) was used to develop wireframes for mobile and desktop in the planning stage of the website. 
+- [Balsamiq](https://balsamiq) was used to develop wireframes for mobile and desktop in the planning stage of the website. <br> <image src="assets/readme/wireframe-home-mob.png" width="300px"></image>
     - Home Page: <br> <image src="assets/readme/wireframe-home.png" width="600px"></image> <br> <image src="assets/readme/wireframe-home-mob.png" width="300px"></image>
     - Search Results Page: <br> <image src="assets/readme/wireframe-results.png" width="600px"></image> <br> <image src="assets/readme/wireframe-results-mob.png" width="300px"></image>
     - Movie Detail Page: <br> <image src="assets/readme/wireframe-moviedetail.png" width="600px"></image> <br> <image src="assets/readme/wireframe-moviedetail-mob.png" width="300px"></image>
