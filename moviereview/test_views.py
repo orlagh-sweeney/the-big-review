@@ -20,7 +20,7 @@ class TestSearchResultsView(TestCase):
 
 class TestMovieDetailView(TestCase):
 
-    def test_get_search_results_page(self):
+    def test_get_movie_detail_page(self):
         movie_id = 123
         response = self.client.get(f'/search/movie/{movie_id}/')
         self.assertEqual(response.status_code, 200)
