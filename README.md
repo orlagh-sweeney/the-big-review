@@ -108,6 +108,12 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
 
 ### Wireframes
 - [Balsamiq](https://balsamiq) was used to develop wireframes for mobile and desktop in the planning stage of the website. 
+    - Home Page: <br> <image src="assets/readme/wireframe-home.png" width="600px"></image> <br> <image src="assets/readme/wireframe-home-mob.png" width="300px"></image>
+    - Search Results Page: <br> <image src="assets/readme/wireframe-results.png" width="600px"></image> <br> <image src="assets/readme/wireframe-results-mob.png" width="300px"></image>
+    - Movie Detail Page: <br> <image src="assets/readme/wireframe-moviedetail.png" width="600px"></image> <br> <image src="assets/readme/wireframe-moviedetail-mob.png" width="300px"></image>
+    - Add Review Page: <br> <image src="assets/readme/wireframe-addreview.png" width="600px"></image> <br> <image src="assets/readme/wireframe-addreview-mob.png" width="300px"></image>
+    - Register Page: <br> <image src="assets/readme/wireframe-register.png" width="600px"></image> <br> <image src="assets/readme/wireframe-register-mob.png" width="300px"></image>
+    - Login Page: <br> <image src="assets/readme/wireframe-login.png" width="600px"></image> <br> <image src="assets/readme/wireframe-login-mob.png" width="300px"></image>
 
 ## Features
 ### General
