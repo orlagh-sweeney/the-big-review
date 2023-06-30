@@ -66,6 +66,7 @@
                             <form class="d-inline" action="{% url 'review_like' r.id %}" method="POST">
                                 {% csrf_token %}
                                 <!-- if the user has voted, display a full heart, if not display an empty heart -->
+                                <!-- code solution to access dictionary from Stackoverflow user russianspy -->
                                 {% for key, value in map_review_id_to_voter_id.items %}
                                     {% if r.id == key %}
                                     {% if user.id in value %}
@@ -81,6 +82,7 @@
                             {% endif %}
                             
                             <!-- display total likes for a review -->
+                            <!-- code solution to access dictionary from Stackoverflow user russianspy -->
                             {% for key, value in total_likes.items %}        
                                 {% if key == r.id %}
                                 <span class="review-like">{{ value }}</span>

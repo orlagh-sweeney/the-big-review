@@ -37,9 +37,11 @@ class SearchResultsView(View):
         returns a list of movies from the TMDB API
         """
         data = None
+        # query code adapted from DevWithMe YouTube video
         query = request.GET.get('q')
         page = request.GET.get('p')
         url = f"https://api.themoviedb.org/3/search/movie?query={query}&api_key={api_key}&include_adult=false&language=en-US&page={page}"
+        # response code from TMDB API documentation
         response = requests.get(url)
 
         if response.status_code == 200:
@@ -77,6 +79,7 @@ class MovieDetailView(View):
         rating = str(rating['rating__avg'])[0:3]
 
         # Calculate total review likes
+        # code solution from Stackoverflow user Alvaro
         total_likes = ReviewLikes.objects.all().values('review').annotate(
             total=Count('id')
         )

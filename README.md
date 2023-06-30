@@ -464,7 +464,7 @@ Deployment to Heroku was completed using the following steps:
 - [TMDB API](https://www.themoviedb.org/): the API documentation was used to set up the API queries for movie search and movie detail.
 - [YouTube](https://www.youtube.com/): The following YouTube sources were used: 
     - [DevWithMe](https://www.youtube.com/watch?v=tm9Yps3IkmQ): this YouTube video was watched to learn how to inject the users search query into the API request URL and display the API data in html.
-    - [A Design Who Codes](https://www.youtube.com/watch?v=45QSuJaHEss): this YouTube video was watched to learn how to change the colour of the bootsrap mobile menu icon.
+    - [A Designer Who Codes](https://www.youtube.com/watch?v=45QSuJaHEss): this YouTube video was watched to learn how to change the colour of the bootsrap mobile menu icon.
 - [Code Institute](https://codeinstitute.net/de/):
     - Code Insitute full stack walkthrough projects were referred to when setting up the project. Elements of these projects were used and adapted to suit this project.
 - [Bootstrap5](https://getbootstrap.com/): was used to add elements including cards for movies, the navigation bar and the search bar. 
