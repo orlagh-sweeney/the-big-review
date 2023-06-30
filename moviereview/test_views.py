@@ -22,6 +22,23 @@ class TestMovieDetailView(TestCase):
 
     def test_get_movie_detail_page(self):
         movie_id = 123
+        user = User.objects.create_user(
+            username='testuser',
+            password='password'
+        )
+        self.client.login(username='testuser', password='password')
+        review = Review.objects.create(
+            title='Test Review',
+            author=user,
+            movie_id='123',
+            body='This is a review',
+            rating='1'
+        )
+        reviewlike = ReviewLikes.objects.create(
+            review=review,
+            voter=user,
+            likes='1'
+        )
         response = self.client.get(f'/search/movie/{movie_id}/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'movie_detail.html')
@@ -42,6 +59,18 @@ class TestAddReviewView(TestCase):
             password='password'
         )
         self.client.login(username='testuser', password='password')
+        review = Review.objects.create(
+            title='Test Review',
+            author=user,
+            movie_id='123',
+            body='This is a review',
+            rating='1'
+        )
+        reviewlike = ReviewLikes.objects.create(
+            review=review,
+            voter=user,
+            likes='1'
+        )
         response = self.client.post(f'/search/movie/{movie_id}/addreview/', {
             'title': 'Test Review',
             'author': user,
@@ -86,6 +115,11 @@ class TestEditReviewView(TestCase):
             movie_id='123',
             body='This is a review',
             rating='1'
+        )
+        reviewlike = ReviewLikes.objects.create(
+            review=review,
+            voter=user,
+            likes='1'
         )
         response = self.client.post(
             f'/search/movie/{movie_id}/edit/{review.id}',
@@ -136,6 +170,11 @@ class TestDeleteReviewView(TestCase):
             movie_id='123',
             body='This is a review',
             rating='1'
+        )
+        reviewlike = ReviewLikes.objects.create(
+            review=review,
+            voter=user,
+            likes='1'
         )
         response = self.client.post(
             f'/search/movie/{movie_id}/delete/{review.id}'
