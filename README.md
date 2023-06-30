@@ -12,7 +12,7 @@ The Big Review is a movie review website which uses the TMDB API to get movie da
 
 This project has been developed as my 4th Portfolio Project for my Diploma in Full Stack Software Development with Code Institute. 
 
-The project can be viewed here:
+The project can be viewed here: [The Big Review](https://the-big-review.herokuapp.com/)
 
 ## Table of Contents
 1. [User Experience](#user-experience-ux)
@@ -43,7 +43,7 @@ The project can be viewed here:
     - [Accessibility](#accessibility)
     - [Device Testing](#device-testing)
     - [Browser Testing](#browser-testing)
-    - [Automated Tests](#automated_tests)
+    - [Automated Tests](#automated-tests)
     - [Feature Testing](#feature-testing)
     - [Bugs](#bugs)
 6. [Deployment](#deployment)
@@ -296,7 +296,9 @@ The website was tested on the following browsers with no issues:
 - Microsoft Edge
 
 ### Automated Tests
-Automated tests were written for forms.py, models.py and views.py. Coverage was used to generate a report to see how much code was tested. <br> <image src="assets/readme/coverage-report.png" width="600px"></image>
+Automated tests were written for forms.py, models.py and views.py. 17 tests were created. 14 out of 17 tests pass. Please refer to the [unresolved bugs](#unresolved-bugs) section for further information on tests throwing errors. <br> <image src="assets/readme/tests-report.png" width="200px"></image>
+
+Coverage was used to generate a report to see how much code was tested. <br> <image src="assets/readme/coverage-report.png" width="600px"></image>
 
 ### Feature Testing
 The following manual tests were carried out:
@@ -417,6 +419,13 @@ The deployed site was unable to render to edit page due to an error. The error w
 ### Unresolved Bugs:
 1. Pagination:
 The site intended to paginate movie search results for better display and navigation. The django paginator feature did not work since the data was coming from an API rather than a database model. This issue has been left unresolved and will be addressed in the next iteration of the project.
+
+2. Automated Tests:
+After implentation of Pandas dataframe to store review_likes data, a number of automated tests began to throw errors relating to lines 93 and 94 of views.py. 3 out of 6 tests were fixed by creating a reviewlikes object within the test, while 3 tests continue to throw errors. This is related to the database being empty at that point of the code, creating a reviewlikes object in these 3 tests did not resolve the issue. Further debugging and testing is required to resolve these errors. 
+Automated tests currently throwing errors:
+    - test_can_delete_review
+    - test_can_like_review
+    - test_can_unlike_review
 
 ## Deployment
 The program was developed in Gitpod. It was then commited and pushed to GitHub.
